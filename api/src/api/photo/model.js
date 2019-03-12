@@ -1,5 +1,4 @@
 import mongoose, { Schema } from 'mongoose'
-import { Noticia } from '../noticia'
 const uploadService = require('../../services/upload')
 
 const photoSchema = new Schema({

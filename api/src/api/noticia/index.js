@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { middleware as query } from 'querymen'
 import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy } from './controller'
+import { create, index, show, update, destroy, showDestacado } from './controller'
 import { schema } from './model'
 import { token, master } from '../../services/passport'
 export Noticia, { schema } from './model'
@@ -39,6 +39,15 @@ router.post('/',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
 router.get('/',
+  token({ required: true }),
+  query(),
+  index)
+
+router.get('/destacados',
+  token({ required: true }),
+  showDestacado)
+
+router.get('/ubicacion',
   token({ required: true }),
   query(),
   index)

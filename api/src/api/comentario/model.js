@@ -18,6 +18,10 @@ const comentarioSchema = new Schema({
   },
   contenido: {
     type: String
+  },
+  noticia: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Noticia'
   }
 }, {
   timestamps: true,
@@ -36,7 +40,8 @@ comentarioSchema.methods = {
         email: this.autor.email,
         picture: this.autor.picture,
         name: this.autor.name,
-        id: this.autor.id
+        id: this.autor.id,
+        noticia: this.noticia
       },
       contenido: this.contenido,
       createdAt: this.createdAt,

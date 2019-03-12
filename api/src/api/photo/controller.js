@@ -60,7 +60,7 @@ export const update = ({ bodymen: { body }, params }, res, next) =>
     .then(success(res))
     .catch(next)
 
-export const destroy = ({ params }, res, next) =>
+export const destroy = ({ params }, res, next) => 
   Photo.findById(params.id)
     .then(notFound(res))
     .then((photo) => photo ? photo.remove() : null)

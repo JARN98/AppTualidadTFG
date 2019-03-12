@@ -9,6 +9,7 @@ export const create = async ({ user, bodymen: { body }, params }, res, next) => 
       comentario.autor = user
       comentario.autor.id = user.id
       comentarioId = comentario.id
+      comentario.noticia = params.noticia
       comentario.save()
       return comentario.view(true)
     })

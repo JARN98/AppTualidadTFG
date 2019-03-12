@@ -33,6 +33,17 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
     .then(success(res))
     .catch(next)
 
+export const showDestacado = ({ params }, res, next) => {
+  return Noticia.findById(params.id)
+    .sort('likes')
+    .populate({
+      path: 'comentarios'
+    }).populate('comentarios.autor')
+    .then(noticia => noticia.view(true))
+    .then(success(res))
+    .catch(next)
+}
+
 export const show = ({ params }, res, next) => {
   return Noticia.findById(params.id)
     .populate({
@@ -50,9 +61,16 @@ export const update = ({ bodymen: { body }, params }, res, next) =>
     .then(success(res))
     .catch(next)
 
-export const destroy = ({ params }, res, next) =>
-  Noticia.findById(params.id)
+export const destroy = async ({ params }, res, next) => {
+  var comentariosDeNoticia
+  await Noticia.findById(params.id)
     .then(notFound(res))
     .then((noticia) => noticia ? noticia.remove() : null)
+    .then(noticia => {
+      comentariosDeNoticia = noticia.comentarios
+      console.log(comentariosDeNoticia)
+      return noticia
+    })
     .then(success(res, 204))
     .catch(next)
+}

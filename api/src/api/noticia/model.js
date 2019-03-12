@@ -1,6 +1,7 @@
 import mongoose, { Schema } from 'mongoose'
 import { Photo } from '../photo'
 import { Comentario } from '../comentario'
+import { User } from '../user'
 
 const noticiaSchema = new Schema({
   title: {
@@ -59,12 +60,13 @@ noticiaSchema.pre('remove', { query: true }, function (next) {
       next()
     })
 
-//  Comentario.find({ noticia: this.id })
-//     // eslint-disable-next-line handle-callback-err
-//     .exec((err, result) => {
-//       Promise.all(result.map(photo => photo.remove()))
-//       next()
-//     })
+  Comentario.find({ noticia: this.id })
+    // eslint-disable-next-line handle-callback-err
+    .exec((err, result) => {
+      Promise.all(result.map(comentario => comentario.remove()))
+      next()
+    })
+
 })
 
 noticiaSchema.methods = {
