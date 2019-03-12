@@ -38,14 +38,14 @@ const userSchema = new Schema({
     type: String,
     trim: true
   },
-  favs: {
+  favs: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Noticia'
-  },
-  noticias: {
+  }],
+  noticias: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Noticia'
-  }
+  }]
 },
 {
   timestamps: true
@@ -79,7 +79,7 @@ userSchema.pre('save', function (next) {
 userSchema.methods = {
   view (full) {
     let view = {}
-    let fields = ['id', 'name', 'picture']
+    let fields = ['id', 'name', 'picture', 'favs', 'noticias']
 
     if (full) {
       fields = [...fields, 'email', 'createdAt']
@@ -96,21 +96,21 @@ userSchema.methods = {
 }
 
 userSchema.statics = {
-  roles,
+  roles
 
-  createFromService ({ service, id, email, name, picture }) {
-    return this.findOne({ $or: [{ [`services.${service}`]: id }, { email }] }).then((user) => {
-      if (user) {
-        user.services[service] = id
-        user.name = name
-        user.picture = picture
-        return user.save()
-      } else {
-        const password = randtoken.generate(16)
-        return this.create({ services: { [service]: id }, email, password, name, picture })
-      }
-    })
-  }
+  // createFromService ({ service, id, email, name, picture }) {
+  //   return this.findOne({ $or: [{ [`services.${service}`]: id }, { email }] }).then((user) => {
+  //     if (user) {
+  //       user.services[service] = id
+  //       user.name = name
+  //       user.picture = picture
+  //       return user.save()
+  //     } else {
+  //       const password = randtoken.generate(16)
+  //       return this.create({ services: { [service]: id }, email, password, name, picture })
+  //     }
+  //   })
+  // }
 }
 
 userSchema.plugin(mongooseKeywords, { paths: ['email', 'name'] })

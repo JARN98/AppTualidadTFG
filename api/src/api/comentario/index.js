@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { middleware as query } from 'querymen'
 import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy } from './controller'
+import { create, index, show, update, destroy, destroyAdmin } from './controller'
 import { schema } from './model'
 import { token, master } from '../../services/passport'
 export Comentario, { schema } from './model'
@@ -19,8 +19,8 @@ const { autor, contenido } = schema.tree
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Comentario not found.
  */
-router.post('/',
-  token(),
+router.post('/:noticia',
+  token({ required: true }),
   body({ autor, contenido }),
   create)
 
@@ -34,7 +34,7 @@ router.post('/',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
 router.get('/',
-  token(),
+  token({ required: true }),
   query(),
   index)
 
@@ -47,7 +47,7 @@ router.get('/',
  * @apiError 404 Comentario not found.
  */
 router.get('/:id',
-  token(),
+  token({ required: true }),
   show)
 
 /**
@@ -61,7 +61,7 @@ router.get('/:id',
  * @apiError 404 Comentario not found.
  */
 router.put('/:id',
-  token(),
+  token({ required: true }),
   body({ autor, contenido }),
   update)
 
@@ -73,7 +73,11 @@ router.put('/:id',
  * @apiError 404 Comentario not found.
  */
 router.delete('/:id',
-  token(),
+  token({ required: true }),
   destroy)
+
+router.delete('/admin/:id',
+  token({ required: true, roles: ['admin'] }),
+  destroyAdmin)
 
 export default router

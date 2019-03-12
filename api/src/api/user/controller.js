@@ -20,8 +20,12 @@ export const show = ({ params }, res, next) =>
     .then(success(res))
     .catch(next)
 
-export const showMe = ({ user }, res) =>
-  res.json(user.view(true))
+export const showMe = ({ user }, res, next) =>
+  User.findById(user.id)
+    .then(notFound(res))
+    .then((user) => user ? user.view(true) : null)
+    .then(success(res))
+    .catch(next)
 
 export const create = ({ bodymen: { body } }, res, next) =>
   User.create(body)

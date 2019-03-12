@@ -25,7 +25,7 @@ const { title, description, likes, comentarios, localizacion, photos, autor } = 
  * @apiError 404 Noticia not found.
  */
 router.post('/',
-  token(),
+  token({ required: true }),
   body({ title, description, likes, comentarios, localizacion, photos, autor }),
   create)
 
@@ -39,7 +39,7 @@ router.post('/',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
 router.get('/',
-  token(),
+  token({ required: true }),
   query(),
   index)
 
@@ -52,7 +52,7 @@ router.get('/',
  * @apiError 404 Noticia not found.
  */
 router.get('/:id',
-  token(),
+  token({ required: true }),
   show)
 
 /**
@@ -71,7 +71,7 @@ router.get('/:id',
  * @apiError 404 Noticia not found.
  */
 router.put('/:id',
-  token(),
+  token({ required: true }),
   body({ title, description, likes, comentarios, localizacion, photos, autor }),
   update)
 
@@ -83,7 +83,11 @@ router.put('/:id',
  * @apiError 404 Noticia not found.
  */
 router.delete('/:id',
-  token(),
+  token({ required: true }),
   destroy)
+
+// router.delete('/:id',
+//   token(roles: ['admin']),
+//   destroyAdmin)
 
 export default router

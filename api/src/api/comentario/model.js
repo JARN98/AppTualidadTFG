@@ -32,7 +32,12 @@ comentarioSchema.methods = {
     const view = {
       // simple view
       id: this.id,
-      autor: this.autor,
+      autor: {
+        email: this.autor.email,
+        picture: this.autor.picture,
+        name: this.autor.name,
+        id: this.autor.id
+      },
       contenido: this.contenido,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt

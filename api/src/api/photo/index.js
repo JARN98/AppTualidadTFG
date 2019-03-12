@@ -12,7 +12,7 @@ const { noticia, imgurLink, deleteHash } = schema.tree
 
 const multer = require('multer')
 const storage = multer.memoryStorage()
-const upload = multer({storage: storage})
+const upload = multer({ storage: storage })
 
 /**
  * @api {post} /photos Create photo
@@ -26,7 +26,7 @@ const upload = multer({storage: storage})
  * @apiError 404 Photo not found.
  */
 router.post('/',
-  token(),
+  token({ required: true }),
   upload.single('photo'),
   // body({ noticia, imgurLink, deleteHash }),
   create)
@@ -42,7 +42,7 @@ router.post('/',
  */
 router.get('/',
   query(),
-  token(),
+  token({ required: true }),
   index)
 
 /**
@@ -54,7 +54,7 @@ router.get('/',
  * @apiError 404 Photo not found.
  */
 router.get('/:id',
-  token(),
+  token({ required: true }),
   show)
 
 /**
@@ -70,7 +70,7 @@ router.get('/:id',
  */
 router.put('/:id',
   body({ noticia, imgurLink, deleteHash }),
-  token(),
+  token({ required: true }),
   update)
 
 /**
@@ -81,7 +81,7 @@ router.put('/:id',
  * @apiError 404 Photo not found.
  */
 router.delete('/:id',
-  token(),
+  token({ required: true }),
   destroy)
 
 export default router

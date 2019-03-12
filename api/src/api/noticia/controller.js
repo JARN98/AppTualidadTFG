@@ -1,14 +1,24 @@
 import { success, notFound } from '../../services/response/'
 import { Noticia } from '.'
 import { User } from '../user'
+import { Comentario } from '../comentario'
 
-export const create = ({bodymen: { body }, user}, res, next) => {
-  Noticia.create(body)
+export const create = async ({ user, bodymen: { body } }, res, next) => {
+  var nuevaNoticia
+  await Noticia.create({ ...body, autor: user })
     .then((noticia) => {
-      console.log(user);
-      // return noticia.view(true);
+      nuevaNoticia = noticia.id
+      console.log(nuevaNoticia)
+      return noticia.view(true)
     })
     .then(success(res, 201))
+    .catch(next)
+
+  await User.findById(user.id)
+    .then(usuario => {
+      usuario.noticias.push(nuevaNoticia)
+      usuario.save()
+    })
     .catch(next)
 }
 
@@ -23,13 +33,15 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
     .then(success(res))
     .catch(next)
 
-export const show = ({ params }, res, next) =>
-  Noticia.findById(params.id)
-    .then(notFound(res))
-    .then((noticia) => noticia ? noticia.view(true) : null)
+export const show = ({ params }, res, next) => {
+  return Noticia.findById(params.id)
+    .populate({
+      path: 'comentarios'
+    }).populate('comentarios.autor')
+    .then(noticia => noticia.view(true))
     .then(success(res))
     .catch(next)
-
+}
 export const update = ({ bodymen: { body }, params }, res, next) =>
   Noticia.findById(params.id)
     .then(notFound(res))

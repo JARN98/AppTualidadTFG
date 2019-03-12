@@ -1,4 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
+import { Photo } from '../photo'
+import { Comentario } from '../comentario'
 
 const noticiaSchema = new Schema({
   title: {
@@ -10,10 +12,10 @@ const noticiaSchema = new Schema({
   likes: {
     type: String
   },
-  comentarios: {
+  comentarios: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Comentario'
-  },
+  }],
   localizacion: {
     type: String
   },
@@ -47,6 +49,22 @@ const noticiaSchema = new Schema({
     virtuals: true,
     transform: (obj, ret) => { delete ret._id }
   }
+})
+
+noticiaSchema.pre('remove', { query: true }, function (next) {
+  Photo.find({ noticia: this.id })
+    // eslint-disable-next-line handle-callback-err
+    .exec((err, result) => {
+      Promise.all(result.map(photo => photo.remove()))
+      next()
+    })
+
+//  Comentario.find({ noticia: this.id })
+//     // eslint-disable-next-line handle-callback-err
+//     .exec((err, result) => {
+//       Promise.all(result.map(photo => photo.remove()))
+//       next()
+//     })
 })
 
 noticiaSchema.methods = {
