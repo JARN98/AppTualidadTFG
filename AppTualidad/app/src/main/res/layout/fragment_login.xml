@@ -77,7 +77,7 @@
         android:id="@+id/Button_login"
 
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
 
         android:layout_marginLeft="8dp"
@@ -98,7 +98,7 @@
         android:id="@+id/Button_loginToRegistro"
 
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
 
         android:background="@drawable/buttonshape2"
         android:text="@string/Button_loginToRegistro"

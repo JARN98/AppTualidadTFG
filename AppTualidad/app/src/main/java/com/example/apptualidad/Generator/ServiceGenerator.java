@@ -13,10 +13,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
-        /*private static final String BASE_URL = "https://vive-inmobiliaria.herokuapp.com";*/
-    private static final String BASE_URL = "https://realstatev2.herokuapp.com/";
-    /*public static String MASTER_KEY = "SPRPOIRPOWQIERPOQWEOQWRIPQPOEIRW";*/
-    public static String MASTER_KEY = "hzasFUC4txHXVHHWvjkR2R7UxQ6kzBlw";
+    private static final String BASE_URL = "https://app-tualidad.herokuapp.com/";
+    public static String MASTER_KEY = "AUCYCh1QHa9Fioxo7FtLicw1oFp2VBOZ";
 
 
 

@@ -67,7 +67,7 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="@string/editText_password_registro"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +94,7 @@
         android:id="@+id/Button_registro"
 
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
 
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -115,7 +115,7 @@
         android:id="@+id/Button_registroToLogin"
 
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
 
         android:background="@drawable/buttonshape2"
         android:text="@string/Button_registroToLogin"

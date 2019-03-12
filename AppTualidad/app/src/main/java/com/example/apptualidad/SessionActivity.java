@@ -2,6 +2,7 @@ package com.example.apptualidad;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.apptualidad.Fragments.LoginFragment;
 import com.example.apptualidad.Fragments.RegistroFragment;
@@ -19,13 +20,7 @@ public class SessionActivity extends AppCompatActivity implements LoginFragment.
                 .commit();
     }
 
-    public void navegarLogin() {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.SessionContainer, new LoginFragment())
-                .commit();
-    }
-
+    @Override
     public void navegarRegistro() {
         getSupportFragmentManager()
                 .beginTransaction()
@@ -33,6 +28,13 @@ public class SessionActivity extends AppCompatActivity implements LoginFragment.
                 .commit();
     }
 
+    @Override
+    public void navegarLogin() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.SessionContainer, new LoginFragment())
+                .commit();
+    }
 
 
 }

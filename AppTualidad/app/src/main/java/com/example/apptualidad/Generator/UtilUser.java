@@ -3,6 +3,8 @@ package com.example.apptualidad.Generator;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.apptualidad.Model.User;
+
 
 public class UtilUser {
     static SharedPreferences sharedPreferences;
@@ -102,13 +104,13 @@ public class UtilUser {
         editor.commit();
     }
 
-/*    public static  void setUserInfo(Context mContext, User user){
+    public static  void setUserInfo(Context mContext, User user){
         setNombre(mContext, user.getName());
         setEmail(mContext, user.getEmail());
         setImagen(mContext, user.getPicture());
         setRol(mContext, user.getRole());
         setId(mContext, user.getId());
-    }*/
+    }
 
     public static void setIdComentario(Context mContext, String id) {
         setSharedPreferences(mContext);
