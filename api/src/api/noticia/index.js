@@ -1,13 +1,27 @@
 import { Router } from 'express'
-import { middleware as query } from 'querymen'
+import { middleware as query, Schema } from 'querymen'
 import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy, showDestacado } from './controller'
+import { create, index, show, update, destroy, indexDestacado } from './controller'
 import { schema } from './model'
 import { token, master } from '../../services/passport'
 export Noticia, { schema } from './model'
 
 const router = new Router()
 const { title, description, likes, comentarios, localizacion, photos, autor } = schema.tree
+
+const noticiaSchema = new Schema({
+  sort: {
+    type: [String],
+    paths: ['sort']
+  },
+  near: {
+    paths: ['localizacion']
+  },
+  title: {
+    type: [String],
+    paths: ['title']
+  }
+}, { near: true })
 
 /**
  * @api {post} /noticias Create noticia
@@ -40,16 +54,7 @@ router.post('/',
  */
 router.get('/',
   token({ required: true }),
-  query(),
-  index)
-
-router.get('/destacados',
-  token({ required: true }),
-  showDestacado)
-
-router.get('/ubicacion',
-  token({ required: true }),
-  query(),
+  query(noticiaSchema),
   index)
 
 /**

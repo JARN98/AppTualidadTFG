@@ -1,6 +1,7 @@
 import { success, notFound } from '../../services/response/'
 import { User } from '.'
 import { sign } from '../../services/jwt'
+import { Noticia } from '../noticia'
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) =>
   User.count(query)
@@ -46,6 +47,64 @@ export const create = ({ bodymen: { body } }, res, next) =>
         next(err)
       }
     })
+
+export const addFav = ({ bodymen: { body }, params, user }, res, next) => {
+  var encontrado = false;
+  var i = 0
+  console.log(user.favs.length);
+  console.log(user.favs[0]);
+
+  while (!encontrado && i <= user.favs.length && user.favs.length != 0) {
+    console.log('entro');
+    
+    if (user.favs[i].equals(params.noticia)) {
+      encontrado = true
+    }
+    i = i + 1
+  }
+
+  if (encontrado) {
+    var ya = false
+    var j = 0
+    while (!ya) {
+      if (user.favs[j].equals(params.noticia)) {
+        ya = true
+      }
+    }
+    
+    if (ya) {
+      user.favs.splice(j, 1)
+      user.save();
+    }
+
+    Noticia.findById(params.noticia)
+      .then(noticia => {
+        var numero = parseInt(noticia.likes)
+        numero = numero - 1
+        var caracteres = numero + ''
+        noticia.likes = caracteres
+        noticia.save()
+        return noticia.view()
+      })
+      .then(success(res))
+      .catch(next)
+  } else {
+    user.favs.push(params.noticia)
+    user.save()
+
+    Noticia.findById(params.noticia)
+      .then(noticia => {
+        var numero = parseInt(noticia.likes)
+        numero = numero + 1
+        var caracteres = numero + ''
+        noticia.likes = caracteres
+        noticia.save()
+        return noticia.view()
+      })
+      .then(success(res))
+      .catch(next)
+  }
+}
 
 export const update = ({ bodymen: { body }, params, user }, res, next) =>
   User.findById(params.id === 'me' ? user.id : params.id)

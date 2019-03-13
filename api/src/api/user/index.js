@@ -2,12 +2,12 @@ import { Router } from 'express'
 import { middleware as query } from 'querymen'
 import { middleware as body } from 'bodymen'
 import { password as passwordAuth, master, token } from '../../services/passport'
-import { index, showMe, show, create, update, updatePassword, destroy } from './controller'
+import { index, showMe, show, create, update, updatePassword, destroy, addFav } from './controller'
 import { schema } from './model'
 export User, { schema } from './model'
 
 const router = new Router()
-const { email, password, name, picture, role } = schema.tree
+const { email, password, name, picture, role, favs } = schema.tree
 
 /**
  * @api {get} /users Retrieve users
@@ -102,7 +102,10 @@ router.put('/:id/password',
   passwordAuth(),
   body({ password }),
   updatePassword)
-
+router.put('/fav/:noticia',
+  token({ required: true }),
+  body(),
+  addFav)
 /**
  * @api {delete} /users/:id Delete user
  * @apiName DeleteUser

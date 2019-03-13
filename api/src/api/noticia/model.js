@@ -2,6 +2,7 @@ import mongoose, { Schema } from 'mongoose'
 import { Photo } from '../photo'
 import { Comentario } from '../comentario'
 import { User } from '../user'
+const S = require('string')
 
 const noticiaSchema = new Schema({
   title: {
@@ -17,9 +18,6 @@ const noticiaSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Comentario'
   }],
-  localizacion: {
-    type: String
-  },
   photos: [{
     id: {
       type: mongoose.Schema.Types.ObjectId,
@@ -43,8 +41,14 @@ const noticiaSchema = new Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'
     }
+  },
+  localizacion: {
+    type: [Number],
+    get: (v) => (v && v.length > 0) ? v.join() : null,
+    set: (v) => (S(v).isEmpty()) ? null : v.split(',').map(Number)
   }
 }, {
+  strict: false,
   timestamps: true,
   toJSON: {
     virtuals: true,
@@ -98,6 +102,8 @@ noticiaSchema.methods = {
     } : view
   }
 }
+
+noticiaSchema.index({localizacion: '2dsphere'})
 
 const model = mongoose.model('Noticia', noticiaSchema)
 
