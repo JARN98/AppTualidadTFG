@@ -51,31 +51,35 @@ export const create = ({ bodymen: { body } }, res, next) =>
 export const addFav = ({ bodymen: { body }, params, user }, res, next) => {
   var encontrado = false;
   var i = 0
-  console.log(user.favs.length);
-  console.log(user.favs[0]);
 
-  while (!encontrado && i <= user.favs.length && user.favs.length != 0) {
-    console.log('entro');
-    
+  while (!encontrado && i < user.favs.length && user.favs.length != 0) {
+
     if (user.favs[i].equals(params.noticia)) {
       encontrado = true
+    } else {
+      i = i + 1
     }
-    i = i + 1
+
   }
 
   if (encontrado) {
     var ya = false
     var j = 0
     while (!ya) {
+      console.log('hola');
+
       if (user.favs[j].equals(params.noticia)) {
         ya = true
+      } else {
+        j = j + 1
       }
     }
-    
-    if (ya) {
-      user.favs.splice(j, 1)
-      user.save();
-    }
+  }
+
+  if (ya) {
+    user.favs.splice(j, 1)
+    user.save();
+
 
     Noticia.findById(params.noticia)
       .then(noticia => {

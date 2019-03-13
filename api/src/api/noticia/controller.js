@@ -12,6 +12,7 @@ export const create = async ({ user, bodymen: { body } }, res, next) => {
       noticia.autor.email = user.email
       nuevaNoticia = noticia.id
       console.log(nuevaNoticia)
+      noticia.save()
       return noticia.view(true)
     })
     .then(success(res, 201))
@@ -66,15 +67,40 @@ export const update = ({ bodymen: { body }, params }, res, next) =>
     .catch(next)
 
 export const destroy = async ({ params }, res, next) => {
-  var comentariosDeNoticia
+  var autor
+  var noticiaId
   await Noticia.findById(params.id)
     .then(notFound(res))
     .then((noticia) => noticia ? noticia.remove() : null)
     .then(noticia => {
-      comentariosDeNoticia = noticia.comentarios
-      console.log(comentariosDeNoticia)
+      console.log(noticia.autor.id);
+      noticiaId = noticia.id
+      
+      autor = noticia.autor.id
+      console.log('autor ' + autor);
+
       return noticia
     })
     .then(success(res, 204))
     .catch(next)
+
+  User.findById(autor)
+    .then(user => {
+      var encontrado = false
+      var i = 0
+      while (!encontrado && i <= user.noticias.length) {
+
+        if (user.noticias[i].equals(noticiaId)) {
+          encontrado = true
+        } else {
+          i = i + 1
+        }
+
+      }
+
+      if (encontrado) {
+        user.noticias.splice(i, 1);
+        user.save()
+      }
+    })
 }
