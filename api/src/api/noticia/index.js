@@ -86,7 +86,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true }),
-  body({ title, description, likes, comentarios, localizacion, photos, autor }),
+  body({ title, description }),
   update)
 
 /**
