@@ -108,6 +108,8 @@ export const addFav = ({ bodymen: { body }, params, user }, res, next) => {
       .then(success(res))
       .catch(next)
   }
+
+  res.send(user)
 }
 
 export const update = ({ bodymen: { body }, params, user }, res, next) =>

@@ -4,7 +4,24 @@
             "outputFile": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8c1cb337bc214d60b8b26c5f5a718fbd/res/values-large-v4/values-large-v4.xml",
+                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/values-large-v4/values-large-v4.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,177",
+                        "endColumns": "121,133",
+                        "endOffsets": "172,306"
+                    },
+                    "to": {
+                        "startLines": "11,12",
+                        "startColumns": "4,4",
+                        "startOffsets": "752,874",
+                        "endColumns": "121,133",
+                        "endOffsets": "869,1003"
+                    }
+                },
+                {
+                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

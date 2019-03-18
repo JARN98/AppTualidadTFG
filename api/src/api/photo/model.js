@@ -1,4 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
+import { Noticia } from '../noticia'
+import { success } from '../../services/response'
 const uploadService = require('../../services/upload')
 
 const photoSchema = new Schema({
@@ -22,6 +24,26 @@ const photoSchema = new Schema({
 photoSchema.pre('remove', { query: true }, function (next) {
   uploadService.deleteImage(this.deletehash)
   return next()
+})
+
+photoSchema.post('remove', { query: true }, function (res, next) {
+  Noticia.findOne({ 'photos.link': res.imgurLink })
+    .then(noticia => {
+      var i = 0
+      var encontrado = false
+      while (!encontrado && i < noticia.photos.length) {
+        var element = noticia.photos[i]
+        if (element.id.equals(this.id)) {
+          noticia.photos.splice(i, 1)
+          encontrado = true
+        }
+        i++
+      }
+
+      noticia.save()
+    })
+
+  next()
 })
 
 photoSchema.methods = {

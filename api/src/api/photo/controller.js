@@ -4,8 +4,11 @@ import { Noticia } from '../noticia'
 const uploadService = require('../../services/upload/')
 
 export const create = async (req, res, next) => {
+  console.log(req.file);
+  
   var idNoticia
   var link
+  var id
   await uploadService.uploadFromBinary(req.file.buffer)
     .then(json => Photo.create({
       noticia: req.body.noticia,
@@ -15,6 +18,7 @@ export const create = async (req, res, next) => {
     .then((photo) => {
       idNoticia = photo.noticia
       link = photo.imgurLink
+      id = photo.id
 
       return photo.view(true)
     })
@@ -24,7 +28,7 @@ export const create = async (req, res, next) => {
   await Noticia.findOne(idNoticia)
     .then(noticia => {
       console.log(noticia.photos)
-      noticia.photos.push({idNoticia, link})
+      noticia.photos.push({id, idNoticia, link})
       noticia.save()
     })
     .catch(next)

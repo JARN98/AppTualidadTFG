@@ -17,4 +17,12 @@
     <string name="editText_password_registro">Password</string>
     <string name="Button_registro">Entrar</string>
     <string name="Button_registroToLogin">¿Tienes cuenta?</string>
+    <string name="buscar">  Buscar noticia...</string>
+    <string name="button_nuevo">Nuevo</string>
+    <string name="button_destacado">Destacado</string>
+    <string name="button_cerca">Cerca</string>
+    <string name="dialog_message">Elige la distancia</string>
+    <string name="dialog_title">Filtra por distancia de ti</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
 </resources>

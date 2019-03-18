@@ -27,15 +27,13 @@ export const create = async ({ user, bodymen: { body } }, res, next) => {
 }
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) => {
+  busqueda_localizacion(query)
 
-
-  Noticia.count(query)
-    .then(count => Noticia.find(query, select, cursor)
-      .then((noticias) => ({
-        count,
-        rows: noticias.map((noticia) => noticia.view())
-      }))
-    )
+  Noticia.find(query, select, cursor)
+    .then((noticias) => ({
+      count: noticias.length,
+      rows: noticias.map((noticia) => noticia.view())
+    }))
     .then(success(res))
     .catch(next)
 }
@@ -49,6 +47,19 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) => {
 //       console.log(docs)
 //       return docs
 //     })
+
+function busqueda_localizacion(query) {
+  if (query['max_distance'] != null)
+    if (query['loc'] != null) {
+      query['loc'].$near.$maxDistance = query['max_distance']
+      delete query.max_distance
+    }
+  if (query['min_distance'] != null)
+    if (query['loc'] != null) {
+      query['loc'].$near.$minDistance = query['min_distance']
+      delete query.min_distance
+    }
+}
 export const show = ({ params }, res, next) => {
   return Noticia.findById(params.id)
     .populate({
@@ -75,7 +86,7 @@ export const destroy = async ({ params }, res, next) => {
     .then(noticia => {
       console.log(noticia.autor.id);
       noticiaId = noticia.id
-      
+
       autor = noticia.autor.id
       console.log('autor ' + autor);
 

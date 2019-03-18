@@ -4,7 +4,7 @@
             "outputFile": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/62b02a1be01a9fea87baf6d760042596/res/values-v16/values-v16.xml",
+                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e1f289f039cd3fb0df4b72570b4be1b1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8c1cb337bc214d60b8b26c5f5a718fbd/res/values-v16/values-v16.xml",
+                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

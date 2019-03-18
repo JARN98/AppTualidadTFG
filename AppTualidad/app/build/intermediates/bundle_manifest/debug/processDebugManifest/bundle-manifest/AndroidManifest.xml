@@ -9,6 +9,8 @@
         android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +22,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.apptualidad.DashboardActivity" />
+        <activity
+            android:name="com.example.apptualidad.DashboardActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.example.apptualidad.SessionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
@@ -30,7 +34,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.example.apptualidad.lifecycle-trojan"
+            android:exported="false"
+            android:multiprocess="true" />
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
             android:authorities="com.example.apptualidad.com.android.tools.ir.server.InstantRunContentProvider"

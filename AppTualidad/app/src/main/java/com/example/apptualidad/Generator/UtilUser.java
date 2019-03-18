@@ -5,6 +5,10 @@ import android.content.SharedPreferences;
 
 import com.example.apptualidad.Model.User;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class UtilUser {
     static SharedPreferences sharedPreferences;
@@ -104,14 +108,6 @@ public class UtilUser {
         editor.commit();
     }
 
-    public static  void setUserInfo(Context mContext, User user){
-        setNombre(mContext, user.getName());
-        setEmail(mContext, user.getEmail());
-        setImagen(mContext, user.getPicture());
-        setRol(mContext, user.getRole());
-        setId(mContext, user.getId());
-    }
-
     public static void setIdComentario(Context mContext, String id) {
         setSharedPreferences(mContext);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -127,5 +123,32 @@ public class UtilUser {
 
         return id;
     }
+
+    public static String[] getFavs(Context mContext) {
+        setSharedPreferences(mContext);
+        String[] favs = sharedPreferences
+                .getStringSet("favs", null).toArray(new String[0]);
+
+        return favs;
+    }
+
+    public static void setFavs(Context mContext, String[] favs) {
+        setSharedPreferences(mContext);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Set<String> mySet = new HashSet<>(Arrays.asList(favs));
+        editor.putStringSet("favs", mySet);
+        editor.commit();
+    }
+
+    public static  void setUserInfo(Context mContext, User user){
+        setNombre(mContext, user.getName());
+        setEmail(mContext, user.getEmail());
+        setImagen(mContext, user.getPicture());
+        setRol(mContext, user.getRole());
+        setId(mContext, user.getId());
+        setFavs(mContext, user.getFavs());
+    }
+
+
 
 }

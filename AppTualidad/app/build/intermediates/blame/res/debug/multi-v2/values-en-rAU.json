@@ -4,7 +4,7 @@
             "outputFile": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8c1cb337bc214d60b8b26c5f5a718fbd/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/62b02a1be01a9fea87baf6d760042596/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e1f289f039cd3fb0df4b72570b4be1b1/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

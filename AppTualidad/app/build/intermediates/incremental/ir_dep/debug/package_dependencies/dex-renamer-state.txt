@@ -1,4 +1,4 @@
-#Tue Mar 12 08:28:37 CET 2019
+#Sat Mar 16 22:57:39 CET 2019
 base.0=/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/transforms/dexMerger/debug/10
 path.0=classes.dex
 renamed.0=classes.dex

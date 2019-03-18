@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import { middleware as query, Schema } from 'querymen'
+import { middleware as query, Schema } from '../../services/querymen'
 import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy, indexDestacado } from './controller'
+import { create, index, show, update, destroy } from './controller'
 import { schema } from './model'
 import { token, master } from '../../services/passport'
 export Noticia, { schema } from './model'
@@ -9,7 +9,7 @@ export Noticia, { schema } from './model'
 const router = new Router()
 const { title, description, likes, comentarios, localizacion, photos, autor } = schema.tree
 
-const noticiaSchema = new Schema({
+const noticiSchema = new Schema({
   sort: {
     type: [String],
     paths: ['sort']
@@ -54,7 +54,7 @@ router.post('/',
  */
 router.get('/',
   token({ required: true }),
-  query(noticiaSchema),
+  query(noticiSchema),
   index)
 
 /**
