@@ -27,8 +27,6 @@ export const create = async ({ user, bodymen: { body } }, res, next) => {
 }
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) => {
-  busqueda_localizacion(query)
-
   Noticia.find(query, select, cursor)
     .then((noticias) => ({
       count: noticias.length,
@@ -38,28 +36,29 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) => {
     .catch(next)
 }
 
-// export const indexDestacado = ({ querymen: { query, select, cursor } }, res, next) =>
-//   Noticia.find()
-//     .sort('-likes')
-//     .exec(function (err, docs) {
-//       if (err) {      
-//       }
-//       console.log(docs)
-//       return docs
-//     })
+export const indexGeo = ({ querymen: { query, select, cursor }, params }, res, next) => {
+  Noticia.find({
+    localizacion: {
+      $near: {
+        $maxDistance: params.maxDistance || 1000,
+        $geometry: {
+          type: 'Point',
+          coordinates: [params.long, params.lat]
+        }
+      }
+    }
+  }, select, cursor)
+    .find((error, results) => {
+      if (error) console.log(error)
+      results.localizacion = params.long + ',' + params.lat
 
-function busqueda_localizacion(query) {
-  if (query['max_distance'] != null)
-    if (query['loc'] != null) {
-      query['loc'].$near.$maxDistance = query['max_distance']
-      delete query.max_distance
-    }
-  if (query['min_distance'] != null)
-    if (query['loc'] != null) {
-      query['loc'].$near.$minDistance = query['min_distance']
-      delete query.min_distance
-    }
+      res.send({
+        count: results.length,
+        rows: results.map((results) => results.view())
+      })
+    })
 }
+
 export const show = ({ params }, res, next) => {
   return Noticia.findById(params.id)
     .populate({
@@ -84,11 +83,11 @@ export const destroy = async ({ params }, res, next) => {
     .then(notFound(res))
     .then((noticia) => noticia ? noticia.remove() : null)
     .then(noticia => {
-      console.log(noticia.autor.id);
+      console.log(noticia.autor.id)
       noticiaId = noticia.id
 
       autor = noticia.autor.id
-      console.log('autor ' + autor);
+      console.log('autor ' + autor)
 
       return noticia
     })
@@ -100,17 +99,15 @@ export const destroy = async ({ params }, res, next) => {
       var encontrado = false
       var i = 0
       while (!encontrado && i <= user.noticias.length) {
-
         if (user.noticias[i].equals(noticiaId)) {
           encontrado = true
         } else {
           i = i + 1
         }
-
       }
 
       if (encontrado) {
-        user.noticias.splice(i, 1);
+        user.noticias.splice(i, 1)
         user.save()
       }
     })

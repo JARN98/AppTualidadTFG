@@ -1,7 +1,6 @@
 package com.example.apptualidad.Adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,8 +29,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static android.support.constraint.Constraints.TAG;
 
 
 public class MyNuevoNoticiasRecyclerViewAdapter extends RecyclerView.Adapter<MyNuevoNoticiasRecyclerViewAdapter.ViewHolder> {
@@ -173,10 +170,10 @@ public class MyNuevoNoticiasRecyclerViewAdapter extends RecyclerView.Adapter<MyN
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            imageView_imagen = view.findViewById(R.id.imageView_imagen);
-            imageView_favourite = view.findViewById(R.id.imageView_favourite);
-            textView_title = view.findViewById(R.id.textView_title);
-            textView_likes = view.findViewById(R.id.textView_likes);
+            imageView_imagen = view.findViewById(R.id.imageView_imagen_mp);
+            imageView_favourite = view.findViewById(R.id.imageView_favourite_mp);
+            textView_title = view.findViewById(R.id.textView_title_mp);
+            textView_likes = view.findViewById(R.id.textView_likes_mp);
         }
 
         @Override

@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { middleware as query } from '../../services/querymen'
 import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy } from './controller'
+import { create, index, show, update, destroy, createPerfilPhoto } from './controller'
 import { schema } from './model'
 import { token, master } from '../../services/passport'
 export Photo, { schema } from './model'
@@ -28,8 +28,12 @@ const upload = multer({ storage: storage })
 router.post('/',
   token({ required: true }),
   upload.single('photo'),
-  // body({ noticia, imgurLink, deleteHash }),
   create)
+
+router.post('/user',
+  token({ required: true }),
+  upload.single('photo'),
+  createPerfilPhoto)
 
 /**
  * @api {get} /photos Retrieve photos

@@ -25,4 +25,13 @@
     <string name="dialog_title">Filtra por distancia de ti</string>
     <string name="ok">Aceptar</string>
     <string name="cancel">Cancelar</string>
+    <string name="button_mispublicaciones">Mis publicaciones</string>
+    <string name="button_perfil">Perfil</string>
+    <string name="button_change_photo">Cambiar foto</string>
+    <string name="editText_change_perfil">Email...</string>
+    <string name="editText_change_name">Nombre...</string>
+    <string name="change_pass">Cambiar contraseña</string>
+    <string name="editText_pass_actual">Contraseña actual</string>
+    <string name="editText_pass_nueva">Nueva contraseña</string>
+    <string name="editText_pass_rep">Repite contraseña</string>
 </resources>

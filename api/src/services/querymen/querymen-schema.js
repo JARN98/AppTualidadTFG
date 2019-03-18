@@ -1,58 +1,57 @@
-'use strict';
+'use strict'
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
-});
+})
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) { return typeof obj } : function (obj) { return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj }
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = (function () { function defineProperties (target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor) } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor } }())
 
-var _lodash = require('lodash');
+var _lodash = require('lodash')
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lodash2 = _interopRequireDefault(_lodash)
 
-var _2 = require('./');
+var _2 = require('./')
 
-var _3 = _interopRequireDefault(_2);
+var _3 = _interopRequireDefault(_2)
 
-var _querymenParam = require('./querymen-param');
+var _querymenParam = require('./querymen-param')
 
-var _querymenParam2 = _interopRequireDefault(_querymenParam);
+var _querymenParam2 = _interopRequireDefault(_querymenParam)
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _defineProperty (obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }) } else { obj[key] = value } return obj }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function') } }
 
 /**
  * QuerymenSchema class.
  */
-var QuerymenSchema = function () {
-
+var QuerymenSchema = (function () {
   /**
    * Create a schema.
    * @param {Object} [params] - Params object.
    * @param {Object} [options] - Options object.
    */
-  function QuerymenSchema() {
-    var _this = this;
+  function QuerymenSchema () {
+    var _this = this
 
-    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}
 
-    _classCallCheck(this, QuerymenSchema);
+    _classCallCheck(this, QuerymenSchema)
 
-    this.params = {};
+    this.params = {}
     this.options = _lodash2.default.assign({
       near: false
-    }, options);
+    }, options)
     this.handlers = {
       parsers: {},
       formatters: {},
       validators: {}
-    };
+    }
     this._params = {
       q: {
         type: RegExp,
@@ -62,21 +61,21 @@ var QuerymenSchema = function () {
       fields: {
         type: [String],
         bindTo: 'select',
-        parse: function parse(value) {
-          var fields = _lodash2.default.isArray(value) ? value : [value];
-          var query = {};
+        parse: function parse (value) {
+          var fields = _lodash2.default.isArray(value) ? value : [value]
+          var query = {}
           fields.forEach(function (field) {
-            if (_lodash2.default.isNil(field) || _lodash2.default.isEmpty(field)) return;
-            field = field.replace(/^([-+]?)id/, '$1_id');
+            if (_lodash2.default.isNil(field) || _lodash2.default.isEmpty(field)) return
+            field = field.replace(/^([-+]?)id/, '$1_id')
             if (field.charAt(0) === '-') {
-              query[field.slice(1)] = 0;
+              query[field.slice(1)] = 0
             } else if (field.charAt(0) === '+') {
-              query[field.slice(1)] = 1;
+              query[field.slice(1)] = 1
             } else {
-              query[field] = 1;
+              query[field] = 1
             }
-          });
-          return query;
+          })
+          return query
         }
       },
       near: {
@@ -89,42 +88,45 @@ var QuerymenSchema = function () {
         max_distance: true,
         min_distance: true,
         geojson: true,
-        format: function format(value, param) {
+        format: function format (value, param) {
           if (param.option('min_distance') && !_this.param('min_distance')) {
-            _this.param('min_distance', null, { type: Number, min: 0, parse: function parse() {
-                return false;
-              } });
+            _this.param('min_distance', null, { type: Number,
+              min: 0,
+              parse: function parse () {
+                return false
+              } })
           }
           if (param.option('max_distance') && !_this.param('max_distance')) {
-            _this.param('max_distance', null, { type: Number, parse: function parse() {
-                return false;
-              } });
+            _this.param('max_distance', null, { type: Number,
+              parse: function parse () {
+                return false
+              } })
           }
-          return value;
+          return value
         },
-        parse: function parse(value, path, operator, param) {
-          var query = _defineProperty({}, path, { $near: {} });
-          var minDistance = _this.param('min_distance');
-          var maxDistance = _this.param('max_distance');
+        parse: function parse (value, path, operator, param) {
+          var query = _defineProperty({}, path, { $near: {} })
+          var minDistance = _this.param('min_distance')
+          var maxDistance = _this.param('max_distance')
           if (param.option('geojson')) {
-            query[path].$near = { $geometry: { type: 'Point', coordinates: [value[1], value[0]] } };
+            query[path].$near = { $geometry: { type: 'Point', coordinates: [value[1], value[0]] } }
             if (minDistance && minDistance.value()) {
-              query[path].$near.$minDistance = minDistance.value();
+              query[path].$near.$minDistance = minDistance.value()
             }
             if (maxDistance && maxDistance.value()) {
-              query[path].$near.$maxDistance = maxDistance.value();
+              query[path].$near.$maxDistance = maxDistance.value()
             }
           } else {
-            query[path].$near = [value[1], value[0]];
+            query[path].$near = [value[1], value[0]]
             if (minDistance && minDistance.value()) {
-              query[path].$minDistance = minDistance.value() / 6371000;
+              query[path].$minDistance = minDistance.value() / 6371000
             }
             if (maxDistance && maxDistance.value()) {
-              query[path].$maxDistance = maxDistance.value() / 6371000;
+              query[path].$maxDistance = maxDistance.value() / 6371000
             }
           }
-          _this.option('sort', false);
-          return query;
+          _this.option('sort', false)
+          return query
         }
       },
       page: {
@@ -133,8 +135,8 @@ var QuerymenSchema = function () {
         max: 30,
         min: 1,
         bindTo: 'cursor',
-        parse: function parse(value, path, operator, param) {
-          return { skip: _this.param('limit').value() * (value - 1) };
+        parse: function parse (value, path, operator, param) {
+          return { skip: _this.param('limit').value() * (value - 1) }
         }
       },
       limit: {
@@ -143,42 +145,42 @@ var QuerymenSchema = function () {
         max: 100,
         min: 1,
         bindTo: 'cursor',
-        parse: function parse(value) {
-          return { limit: value };
+        parse: function parse (value) {
+          return { limit: value }
         }
       },
       sort: {
         type: [String],
         default: '-createdAt',
         bindTo: 'cursor',
-        parse: function parse(value) {
-          var fields = _lodash2.default.isArray(value) ? value : [value];
-          var sort = {};
+        parse: function parse (value) {
+          var fields = _lodash2.default.isArray(value) ? value : [value]
+          var sort = {}
           fields.forEach(function (field) {
             if (field.charAt(0) === '-') {
-              sort[field.slice(1)] = -1;
+              sort[field.slice(1)] = -1
             } else if (field.charAt(0) === '+') {
-              sort[field.slice(1)] = 1;
+              sort[field.slice(1)] = 1
             } else {
-              sort[field] = 1;
+              sort[field] = 1
             }
-          });
-          return { sort: sort };
+          })
+          return { sort: sort }
         }
       }
-    };
+    }
 
-    var keys = _lodash2.default.union(_lodash2.default.keys(this._params), _lodash2.default.keys(params));
+    var keys = _lodash2.default.union(_lodash2.default.keys(this._params), _lodash2.default.keys(params))
 
     keys.forEach(function (key) {
-      return _this.add(key, undefined, params[key]);
-    });
+      return _this.add(key, undefined, params[key])
+    })
 
     _lodash2.default.forIn(_3.default.handlers, function (typedHandler, type) {
       _lodash2.default.forIn(typedHandler, function (handler, name) {
-        _this.handler(type, name, handler);
-      });
-    });
+        _this.handler(type, name, handler)
+      })
+    })
   }
 
   /**
@@ -188,15 +190,14 @@ var QuerymenSchema = function () {
    * @return {*} Value of the option.
    */
 
-
   _createClass(QuerymenSchema, [{
     key: 'option',
-    value: function option(name, value) {
+    value: function option (name, value) {
       if (arguments.length > 1) {
-        this.options[name] = value;
+        this.options[name] = value
       }
 
-      return this.options[name];
+      return this.options[name]
     }
 
     /**
@@ -208,13 +209,13 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'handler',
-    value: function handler(type, name, fn) {
+    value: function handler (type, name, fn) {
       if (arguments.length > 2) {
-        this.handlers[type][name] = fn;
-        this._refreshHandlersInParams(_defineProperty({}, type, _defineProperty({}, name, fn)));
+        this.handlers[type][name] = fn
+        this._refreshHandlersInParams(_defineProperty({}, type, _defineProperty({}, name, fn)))
       }
 
-      return this.handlers[type][name];
+      return this.handlers[type][name]
     }
 
     /**
@@ -226,8 +227,8 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'parser',
-    value: function parser(name, fn) {
-      return this.handler.apply(this, ['parsers'].concat(Array.prototype.slice.call(arguments)));
+    value: function parser (name, fn) {
+      return this.handler.apply(this, ['parsers'].concat(Array.prototype.slice.call(arguments)))
     }
 
     /**
@@ -239,8 +240,8 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'formatter',
-    value: function formatter(name, fn) {
-      return this.handler.apply(this, ['formatters'].concat(Array.prototype.slice.call(arguments)));
+    value: function formatter (name, fn) {
+      return this.handler.apply(this, ['formatters'].concat(Array.prototype.slice.call(arguments)))
     }
 
     /**
@@ -252,8 +253,8 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'validator',
-    value: function validator(name, fn) {
-      return this.handler.apply(this, ['validators'].concat(Array.prototype.slice.call(arguments)));
+    value: function validator (name, fn) {
+      return this.handler.apply(this, ['validators'].concat(Array.prototype.slice.call(arguments)))
     }
 
     /**
@@ -264,10 +265,10 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'get',
-    value: function get(name) {
-      name = this._getSchemaParamName(name);
+    value: function get (name) {
+      name = this._getSchemaParamName(name)
 
-      return this.params[name];
+      return this.params[name]
     }
 
     /**
@@ -280,29 +281,29 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'set',
-    value: function set(name, value, options) {
-      var _this2 = this;
+    value: function set (name, value, options) {
+      var _this2 = this
 
-      name = this._getSchemaParamName(name);
+      name = this._getSchemaParamName(name)
 
       if (this.params[name]) {
-        var _ret = function () {
-          var param = _this2.params[name];
+        var _ret = (function () {
+          var param = _this2.params[name]
 
-          param.value(value);
+          param.value(value)
 
           _lodash2.default.forIn(options, function (optionValue, option) {
-            param.option(option, optionValue);
-          });
+            param.option(option, optionValue)
+          })
 
           return {
             v: param
-          };
-        }();
+          }
+        }())
 
-        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === 'object') return _ret.v
       } else {
-        return;
+
       }
     }
 
@@ -316,27 +317,27 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'add',
-    value: function add(name, value, options) {
+    value: function add (name, value, options) {
       if (name instanceof _querymenParam2.default) {
-        options = name.options;
-        value = name.value();
-        name = name.name;
+        options = name.options
+        value = name.value()
+        name = name.name
       }
 
-      name = this._getSchemaParamName(name);
+      name = this._getSchemaParamName(name)
 
       if (this.options[name] === false) {
-        return false;
+        return false
       }
 
-      options = this._parseParamOptions(options);
+      options = this._parseParamOptions(options)
 
-      options = _lodash2.default.assign({ bindTo: 'query' }, this._params[name], options);
-      this.params[name] = new _querymenParam2.default(name, value, options, this);
+      options = _lodash2.default.assign({ bindTo: 'query' }, this._params[name], options)
+      this.params[name] = new _querymenParam2.default(name, value, options, this)
 
-      this._refreshHandlersInParams(undefined, _defineProperty({}, name, this.params[name]));
+      this._refreshHandlersInParams(undefined, _defineProperty({}, name, this.params[name]))
 
-      return this.params[name];
+      return this.params[name]
     }
 
     /**
@@ -349,12 +350,12 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'param',
-    value: function param(name, value, options) {
+    value: function param (name, value, options) {
       if (arguments.length === 1) {
-        return this.get(name);
+        return this.get(name)
       }
 
-      return this.set(name, value, options) || this.add(name, value, options);
+      return this.set(name, value, options) || this.add(name, value, options)
     }
 
     /**
@@ -365,29 +366,29 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'parse',
-    value: function parse() {
-      var _this3 = this;
+    value: function parse () {
+      var _this3 = this
 
-      var values = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var values = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
 
-      var query = {};
+      var query = {}
 
       _lodash2.default.forIn(this.params, function (param) {
-        var value = values[_this3._getQueryParamName(param.name)];
+        var value = values[_this3._getQueryParamName(param.name)]
 
         if (!_lodash2.default.isNil(value)) {
-          param.value(value);
+          param.value(value)
         }
-      });
+      })
 
       _lodash2.default.forIn(this.params, function (param) {
-        if (_this3.options[_this3._getSchemaParamName(param.name)] === false) return;
-        var bind = param.options.bindTo;
+        if (_this3.options[_this3._getSchemaParamName(param.name)] === false) return
+        var bind = param.options.bindTo
 
-        query[bind] = _lodash2.default.merge(query[bind], param.parse());
-      });
+        query[bind] = _lodash2.default.merge(query[bind], param.parse())
+      })
 
-      return query;
+      return query
     }
 
     /**
@@ -399,96 +400,96 @@ var QuerymenSchema = function () {
 
   }, {
     key: 'validate',
-    value: function validate() {
-      var _this4 = this;
+    value: function validate () {
+      var _this4 = this
 
-      var values = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var values = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
       var next = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function (error) {
-        return !error;
-      };
+        return !error
+      }
 
-      var error = void 0;
+      var error = void 0
 
       if (_lodash2.default.isFunction(values)) {
-        next = values;
-        values = {};
+        next = values
+        values = {}
       }
 
       _lodash2.default.forIn(this.params, function (param) {
-        var value = values[_this4._getQueryParamName(param.name)];
+        var value = values[_this4._getQueryParamName(param.name)]
 
         if (!_lodash2.default.isNil(value)) {
-          param.value(value);
+          param.value(value)
         }
-      });
+      })
 
       for (var i in this.params) {
-        if (error) break;
-        var param = this.params[i];
+        if (error) break
+        var param = this.params[i]
         param.validate(function (err) {
-          error = err;
-        });
+          error = err
+        })
       }
 
-      return next(error);
+      return next(error)
     }
   }, {
     key: '_refreshHandlersInParams',
-    value: function _refreshHandlersInParams() {
-      var handlers = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.handlers;
-      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.params;
+    value: function _refreshHandlersInParams () {
+      var handlers = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.handlers
+      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.params
 
       _lodash2.default.forIn(handlers, function (typedHandler, type) {
         _lodash2.default.forIn(typedHandler, function (handler, name) {
           _lodash2.default.forIn(params, function (param) {
-            param.handler(type, name, handler);
-          });
-        });
-      });
+            param.handler(type, name, handler)
+          })
+        })
+      })
     }
   }, {
     key: '_getSchemaParamName',
-    value: function _getSchemaParamName(paramName) {
+    value: function _getSchemaParamName (paramName) {
       return _lodash2.default.findKey(this.options, function (option) {
-        return option === paramName;
-      }) || paramName;
+        return option === paramName
+      }) || paramName
     }
   }, {
     key: '_getQueryParamName',
-    value: function _getQueryParamName(paramName) {
-      return _lodash2.default.isString(this.options[paramName]) ? this.options[paramName] : paramName;
+    value: function _getQueryParamName (paramName) {
+      return _lodash2.default.isString(this.options[paramName]) ? this.options[paramName] : paramName
     }
   }, {
     key: '_parseParamOptions',
-    value: function _parseParamOptions(options) {
+    value: function _parseParamOptions (options) {
       if (_lodash2.default.isArray(options) && options.length) {
-        var innerOption = this._parseParamOptions(options[0]);
-        options = {};
+        var innerOption = this._parseParamOptions(options[0])
+        options = {}
         if (innerOption.type) {
-          options.type = [innerOption.type];
+          options.type = [innerOption.type]
         }
         if (innerOption.default) {
-          options.default = innerOption.default;
+          options.default = innerOption.default
         }
       } else if (_lodash2.default.isString(options)) {
-        options = { default: options };
+        options = { default: options }
       } else if (_lodash2.default.isNumber(options)) {
-        options = { type: Number, default: options };
+        options = { type: Number, default: options }
       } else if (_lodash2.default.isBoolean(options)) {
-        options = { type: Boolean, default: options };
+        options = { type: Boolean, default: options }
       } else if (_lodash2.default.isDate(options)) {
-        options = { type: Date, default: options };
+        options = { type: Date, default: options }
       } else if (_lodash2.default.isRegExp(options)) {
-        options = { type: RegExp, default: options };
+        options = { type: RegExp, default: options }
       } else if (_lodash2.default.isFunction(options)) {
-        options = { type: options };
+        options = { type: options }
       }
 
-      return options || {};
+      return options || {}
     }
-  }]);
+  }])
 
-  return QuerymenSchema;
-}();
+  return QuerymenSchema
+}())
 
-exports.default = QuerymenSchema;
+exports.default = QuerymenSchema

@@ -1,13 +1,16 @@
 package com.example.apptualidad;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,13 +40,15 @@ public class DashboardActivity extends AppCompatActivity implements listaNoticia
     private Button button_nuevo, button_destacado, button_cerca;
     private FrameLayout contenedor_listas;
     private EditText editText_buscar;
-    private ImageView imageView_filter;
+    private ImageView imageView_filter, imageView_perfil;
     private int queFragmentoEsta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        ActivityCompat.requestPermissions(DashboardActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
         findids();
 
@@ -78,6 +83,8 @@ public class DashboardActivity extends AppCompatActivity implements listaNoticia
             }
         });
 
+
+
         imageView_filter.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @SuppressLint("ResourceAsColor")
@@ -86,6 +93,18 @@ public class DashboardActivity extends AppCompatActivity implements listaNoticia
                crearDialogo();
             }
         });
+
+        imageView_perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irAPerfilActivity();
+            }
+        });
+    }
+
+    private void irAPerfilActivity() {
+
+        startActivity(new Intent(DashboardActivity.this, PerfilActivity.class));
     }
 
     @SuppressLint("ResourceAsColor")
@@ -231,6 +250,7 @@ public class DashboardActivity extends AppCompatActivity implements listaNoticia
         contenedor_listas = findViewById(R.id.contenedor_listas);
         editText_buscar = findViewById(R.id.editText_buscar);
         imageView_filter = findViewById(R.id.imageView_filter);
+        imageView_perfil = findViewById(R.id.imageView_perfil);
     }
 
 }

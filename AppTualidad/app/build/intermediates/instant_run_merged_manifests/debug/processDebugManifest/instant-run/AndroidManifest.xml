@@ -23,6 +23,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.example.apptualidad.PerfilActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name="com.example.apptualidad.DashboardActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

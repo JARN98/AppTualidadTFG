@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { middleware as query, Schema } from '../../services/querymen'
 import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy } from './controller'
+import { create, index, show, update, destroy, indexGeo } from './controller'
 import { schema } from './model'
 import { token, master } from '../../services/passport'
 export Noticia, { schema } from './model'
@@ -14,14 +14,16 @@ const noticiSchema = new Schema({
     type: [String],
     paths: ['sort']
   },
-  near: {
-    paths: ['localizacion']
+  localizacion: {
+    type: { type: String },
+    coordinates: []
   },
   title: {
     type: [String],
     paths: ['title']
   }
 }, { near: true })
+
 
 /**
  * @api {post} /noticias Create noticia
@@ -56,6 +58,12 @@ router.get('/',
   token({ required: true }),
   query(noticiSchema),
   index)
+
+
+router.get('/geo/:lat/:long/:maxDistance',
+  token({ required: true }),
+  query(noticiSchema),
+  indexGeo)
 
 /**
  * @api {get} /noticias/:id Retrieve noticia

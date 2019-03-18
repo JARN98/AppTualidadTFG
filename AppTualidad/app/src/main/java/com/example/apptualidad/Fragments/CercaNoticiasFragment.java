@@ -59,6 +59,7 @@ public class CercaNoticiasFragment extends Fragment {
     private MyNuevoNoticiasRecyclerViewAdapter adapter;
     private LocationManager locManager;
     private Context cxt;
+    String lat, lon, maxDistance = "1000";
 
     public CercaNoticiasFragment() {
     }
@@ -114,18 +115,12 @@ public class CercaNoticiasFragment extends Fragment {
                 }
             });
 
-            AplicarFiltroDistanciaViewModel aplicarFiltroDistanciaViewModel = ViewModelProviders.of( (DashboardActivity) cxt).get(AplicarFiltroDistanciaViewModel.class);
+            AplicarFiltroDistanciaViewModel aplicarFiltroDistanciaViewModel = ViewModelProviders.of((DashboardActivity) cxt).get(AplicarFiltroDistanciaViewModel.class);
 
             aplicarFiltroDistanciaViewModel.getAll().observe(getActivity(), new Observer<String>() {
                 @Override
                 public void onChanged(@Nullable String s) {
-                    data.put("max_distance", s);
-                    data.put("min_distance", "0");
-
-                    if (s == "0") {
-                        data.remove("max_distance");
-                        data.remove("min_distance");
-                    }
+                    maxDistance = s + "000";
                 }
             });
             getNoticiasAutorizacionLocalizacion(data, recyclerView);
@@ -135,7 +130,6 @@ public class CercaNoticiasFragment extends Fragment {
     }
 
     private void getNoticiasAutorizacionLocalizacion(final Map<String, String> data, final RecyclerView recyclerView) {
-        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -158,10 +152,11 @@ public class CercaNoticiasFragment extends Fragment {
     }
 
     private void getNoticiasCercaDeMi(Map<String, String> data, final RecyclerView recyclerView) {
-        data.put("near", loc.getLongitude() + "," + loc.getLatitude());
+        lat = loc.getLatitude() + "";
+        lon = loc.getLongitude() + "";
 
         DashboardService service = ServiceGeneratorNear.createService(DashboardService.class, UtilToken.getToken(getContext()), TipoAutenticacion.JWT);
-        Call<ResponseContainer<NoticiaRes>> call = service.getNoticias(data);
+        Call<ResponseContainer<NoticiaRes>> call = service.getNoticiasGeo(lat, lon, maxDistance, data);
 
         call.enqueue(new Callback<ResponseContainer<NoticiaRes>>() {
             @Override

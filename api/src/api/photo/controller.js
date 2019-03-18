@@ -1,11 +1,39 @@
 import { success, notFound } from '../../services/response/'
 import { Photo } from '.'
 import { Noticia } from '../noticia'
+import { User } from '../user'
 const uploadService = require('../../services/upload/')
+
+
+export const createPerfilPhoto = async (req, res, next) => {
+  var idNoticia
+  var link
+  await uploadService.uploadFromBinary(req.file.buffer)
+    .then(json => Photo.create({
+      noticia: req.body.noticia,
+      imgurLink: json.data.link,
+      deletehash: json.data.deletehash
+    }))
+    .then((photo) => {
+      idNoticia = photo.noticia
+      link = photo.imgurLink
+
+      return photo.view(true)
+    })
+    .then(success(res, 201))
+    .catch(next)
+
+  await User.findById(idNoticia)
+    .then(user => {
+      user.picture = link
+      user.save()
+    })
+    .catch(next)
+}
 
 export const create = async (req, res, next) => {
   console.log(req.file);
-  
+
   var idNoticia
   var link
   var id
@@ -28,7 +56,7 @@ export const create = async (req, res, next) => {
   await Noticia.findOne(idNoticia)
     .then(noticia => {
       console.log(noticia.photos)
-      noticia.photos.push({id, idNoticia, link})
+      noticia.photos.push({ id, idNoticia, link })
       noticia.save()
     })
     .catch(next)
@@ -64,7 +92,7 @@ export const update = ({ bodymen: { body }, params }, res, next) =>
     .then(success(res))
     .catch(next)
 
-export const destroy = ({ params }, res, next) => 
+export const destroy = ({ params }, res, next) =>
   Photo.findById(params.id)
     .then(notFound(res))
     .then((photo) => photo ? photo.remove() : null)

@@ -1,44 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="28"
-    build-mode="HOT_WARM"
-    density="560dpi"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="26"
+    build-mode="COLD"
+    density="xxhdpi"
     format="10"
     plugin-version="3.3.0"
-    timestamp="1552893868902"
+    timestamp="1552939886166"
     token="-7461781935899639635"
-    verifier="COMPATIBLE" >
+    verifier="CLASS_ADDED" >
 
     <task
         name="javac"
-        duration="521" />
+        duration="590" />
     <task
         name="instant-run-dex"
-        duration="39" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="16" />
+        duration="38" />
     <task
         name="verifier"
-        duration="2" />
+        duration="8" />
 
     <artifact
-        location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1552893660825"
+        timestamp="1552939760808"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
             location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
@@ -56,10 +59,10 @@
             location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
@@ -72,12 +75,15 @@
             type="SPLIT_MAIN" />
     </build>
     <build
-        build-mode="HOT_WARM"
-        timestamp="1552893868902"
-        verifier="COMPATIBLE" >
+        build-mode="COLD"
+        timestamp="1552939886166"
+        verifier="CLASS_ADDED" >
         <artifact
-            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
+            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

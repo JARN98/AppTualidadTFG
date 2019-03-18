@@ -21,6 +21,20 @@ export const show = ({ params }, res, next) =>
     .then(success(res))
     .catch(next)
 
+export const showMyNotices = ({ user }, res, next) => {
+  console.log(user)
+
+  User.findById(user.id)
+    .populate('noticias')
+    .then(notFound(res))
+    .then((user) => ({
+      count: user.noticias.length,
+      rows: user.noticias
+    }))
+    .then(success(res))
+    .catch(next)
+}
+
 export const showMe = ({ user }, res, next) =>
   User.findById(user.id)
     .then(notFound(res))
@@ -49,24 +63,22 @@ export const create = ({ bodymen: { body } }, res, next) =>
     })
 
 export const addFav = ({ bodymen: { body }, params, user }, res, next) => {
-  var encontrado = false;
+  var encontrado = false
   var i = 0
 
-  while (!encontrado && i < user.favs.length && user.favs.length != 0) {
-
+  while (!encontrado && i < user.favs.length && user.favs.length !== 0) {
     if (user.favs[i].equals(params.noticia)) {
       encontrado = true
     } else {
       i = i + 1
     }
-
   }
 
   if (encontrado) {
     var ya = false
     var j = 0
     while (!ya) {
-      console.log('hola');
+      console.log('hola')
 
       if (user.favs[j].equals(params.noticia)) {
         ya = true
@@ -78,7 +90,7 @@ export const addFav = ({ bodymen: { body }, params, user }, res, next) => {
 
   if (ya) {
     user.favs.splice(j, 1)
-    user.save();
+    user.save()
 
 
     Noticia.findById(params.noticia)
@@ -149,7 +161,7 @@ export const updatePassword = ({ bodymen: { body }, params, user }, res, next) =
       }
       return result
     })
-    .then((user) => user ? user.set({ password: body.password }).save() : null)
+    .then((user) => user ? Object.assign(user, body).save() : null)
     .then((user) => user ? user.view(true) : null)
     .then(success(res))
     .catch(next)

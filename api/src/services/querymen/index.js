@@ -1,38 +1,38 @@
-'use strict';
+'use strict'
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
-});
-exports.handlers = exports.Schema = exports.Param = undefined;
-exports.handler = handler;
-exports.parser = parser;
-exports.formatter = formatter;
-exports.validator = validator;
-exports.middleware = middleware;
-exports.errorHandler = errorHandler;
+})
+exports.handlers = exports.Schema = exports.Param = undefined
+exports.handler = handler
+exports.parser = parser
+exports.formatter = formatter
+exports.validator = validator
+exports.middleware = middleware
+exports.errorHandler = errorHandler
 
-var _lodash = require('lodash');
+var _lodash = require('lodash')
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lodash2 = _interopRequireDefault(_lodash)
 
-var _querymenParam = require('./querymen-param');
+var _querymenParam = require('./querymen-param')
 
-var _querymenParam2 = _interopRequireDefault(_querymenParam);
+var _querymenParam2 = _interopRequireDefault(_querymenParam)
 
-var _querymenSchema = require('./querymen-schema');
+var _querymenSchema = require('./querymen-schema')
 
-var _querymenSchema2 = _interopRequireDefault(_querymenSchema);
+var _querymenSchema2 = _interopRequireDefault(_querymenSchema)
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
-exports.Param = _querymenParam2.default;
-exports.Schema = _querymenSchema2.default; /** @module querymen */
+exports.Param = _querymenParam2.default
+exports.Schema = _querymenSchema2.default /** @module querymen */
 
 var handlers = exports.handlers = {
   parsers: {},
   formatters: {},
   validators: {}
-};
+}
 
 /**
  * Get or set a handler.
@@ -41,12 +41,12 @@ var handlers = exports.handlers = {
  * @param {string} name - Handler name.
  * @param {Function} [fn] - Set the handler method.
  */
-function handler(type, name, fn) {
+function handler (type, name, fn) {
   if (arguments.length > 2) {
-    handlers[type][name] = fn;
+    handlers[type][name] = fn
   }
 
-  return handlers[type][name];
+  return handlers[type][name]
 }
 
 /**
@@ -56,8 +56,8 @@ function handler(type, name, fn) {
  * @param {parserFn} [fn] - Set the parser method.
  * @return {parserFn} The parser method.
  */
-function parser(name, fn) {
-  return handler.apply(undefined, ['parsers'].concat(Array.prototype.slice.call(arguments)));
+function parser (name, fn) {
+  return handler.apply(undefined, ['parsers'].concat(Array.prototype.slice.call(arguments)))
 }
 
 /**
@@ -67,8 +67,8 @@ function parser(name, fn) {
  * @param {formatterFn} [fn] - Set the formatter method.
  * @return {formatterFn} The formatter method.
  */
-function formatter(name, fn) {
-  return handler.apply(undefined, ['formatters'].concat(Array.prototype.slice.call(arguments)));
+function formatter (name, fn) {
+  return handler.apply(undefined, ['formatters'].concat(Array.prototype.slice.call(arguments)))
 }
 
 /**
@@ -78,8 +78,8 @@ function formatter(name, fn) {
  * @param {validatorFn} [fn] - Set the validator method.
  * @return {validatorFn} The validator method.
  */
-function validator(name, fn) {
-  return handler.apply(undefined, ['validators'].concat(Array.prototype.slice.call(arguments)));
+function validator (name, fn) {
+  return handler.apply(undefined, ['validators'].concat(Array.prototype.slice.call(arguments)))
 }
 
 /**
@@ -89,28 +89,29 @@ function validator(name, fn) {
  * @param {Object} [options] - Options to be passed to schema.
  * @return {Function} The middleware.
  */
-function middleware(schema, options) {
+function middleware (schema, options) {
   return function (req, res, next) {
-    var _schema = void 0;
+    var _schema = void 0
     // If option near is enable with make a simple clone
     // In otherwise we make a _.cloneDeep
     if (schema && schema.options && schema.options.near) {
-      _schema = schema instanceof _querymenSchema2.default ? _lodash2.default.cloneDeep(schema) : new _querymenSchema2.default(schema, options);
+      _schema = schema instanceof _querymenSchema2.default ? _lodash2.default.cloneDeep(schema) : new _querymenSchema2.default(schema, options)
     } else {
-      _schema = schema instanceof _querymenSchema2.default ? _lodash2.default.cloneDeep(schema) : new _querymenSchema2.default(schema, options);
+      // _schema = schema instanceof _querymenSchema2.default ? _lodash2.default.cloneDeep(schema) : new _querymenSchema2.default(schema, options);
+      _schema = schema instanceof _querymenSchema2.default ? _lodash2.default.clone(schema) : new _querymenSchema2.default(schema, options)
     }
 
     _schema.validate(req.query, function (err) {
       if (err) {
-        req.querymen = { error: err };
-        res.status(400);
-        return next(err.message);
+        req.querymen = { error: err }
+        res.status(400)
+        return next(err.message)
       }
 
-      req.querymen = _schema.parse();
-      req.querymen.schema = _schema;
-      next();
-    });
+      req.querymen = _schema.parse()
+      req.querymen.schema = _schema
+      next()
+    })
   };
 }
 
@@ -119,14 +120,14 @@ function middleware(schema, options) {
  * @memberof querymen
  * @return {Function} The middleware.
  */
-function errorHandler() {
+function errorHandler () {
   return function (err, req, res, next) {
     if (req.querymen && req.querymen.error) {
-      res.status(400).json(req.querymen.error);
+      res.status(400).json(req.querymen.error)
     } else {
-      next(err);
+      next(err)
     }
-  };
+  }
 }
 
-exports.default = { Schema: _querymenSchema2.default, Param: _querymenParam2.default, handlers: handlers, handler: handler, parser: parser, formatter: formatter, validator: validator, middleware: middleware, errorHandler: errorHandler };
+exports.default = { Schema: _querymenSchema2.default, Param: _querymenParam2.default, handlers: handlers, handler: handler, parser: parser, formatter: formatter, validator: validator, middleware: middleware, errorHandler: errorHandler }

@@ -2,7 +2,7 @@ import { Router } from 'express'
 import { middleware as query } from '../../services/querymen'
 import { middleware as body } from 'bodymen'
 import { password as passwordAuth, master, token } from '../../services/passport'
-import { index, showMe, show, create, update, updatePassword, destroy, addFav } from './controller'
+import { index, showMe, show, create, update, updatePassword, destroy, addFav, showMyNotices } from './controller'
 import { schema } from './model'
 export User, { schema } from './model'
 
@@ -46,7 +46,12 @@ router.get('/me',
  * @apiError 404 User not found.
  */
 router.get('/:id',
+  token({ required: true }),
   show)
+
+router.get('/me/noticias',
+  token({ required: true }),
+  showMyNotices)
 
 /**
  * @api {post} /users Create user
@@ -84,7 +89,7 @@ router.post('/',
  */
 router.put('/:id',
   token({ required: true }),
-  body({ name, picture }),
+  body({ name, email }),
   update)
 
 /**
