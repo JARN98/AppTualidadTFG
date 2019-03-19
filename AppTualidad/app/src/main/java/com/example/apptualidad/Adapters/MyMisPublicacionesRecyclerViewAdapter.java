@@ -1,6 +1,8 @@
 package com.example.apptualidad.Adapters;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,7 +21,11 @@ import com.example.apptualidad.Listener.listaNoticiasInterface;
 import com.example.apptualidad.Model.NoticiaRes;
 import com.example.apptualidad.Model.User;
 import com.example.apptualidad.R;
+import com.example.apptualidad.Responses.LoginResponse;
+import com.example.apptualidad.Responses.MisPublicacionesResponse;
+import com.example.apptualidad.Services.DashboardService;
 import com.example.apptualidad.Services.UserService;
+import com.example.apptualidad.ViewModels.EliminarNoticia;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,12 +37,12 @@ import retrofit2.Response;
 
 
 public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<MyMisPublicacionesRecyclerViewAdapter.ViewHolder> {
-    private final List<NoticiaRes> mValues;
+    private final List<MisPublicacionesResponse> mValues;
     private final listaNoticiasInterface mListener;
     private Context cxt;
     private boolean fav = false;
 
-    public MyMisPublicacionesRecyclerViewAdapter(List<NoticiaRes> items, listaNoticiasInterface listener, Context context) {
+    public MyMisPublicacionesRecyclerViewAdapter(List<MisPublicacionesResponse> items, listaNoticiasInterface listener, Context context) {
         mValues = items;
         mListener = listener;
         cxt = context;
@@ -60,12 +66,12 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
         holder.textView_likes_mp.setText(mValues.get(position).getLikes());
         holder.textView_title_mp.setText(mValues.get(position).getTitle());
 
-        if (!mValues.get(position).getLinkPhoto().equals("")) {
+        if (!mValues.get(position).getFirstPhoto().equals("")) {
             holder.imageView_imagen_mp.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
             Glide
                     .with(cxt)
-                    .load(mValues.get(position).getLinkPhoto())
+                    .load(mValues.get(position).getFirstPhoto())
                     .into(holder.imageView_imagen_mp);
         }
 
@@ -73,6 +79,41 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
         pintarSiFav(position, holder);
 
         darLike(position, holder);
+
+        eliminarNoticia(position, holder);
+    }
+
+    private void eliminarNoticia(final int position, ViewHolder holder) {
+
+        holder.imageView_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DashboardService service = ServiceGenerator.createService(DashboardService.class, UtilToken.getToken(cxt), TipoAutenticacion.JWT);
+                Call<LoginResponse> call = service.deleteNoticia(mValues.get(position).getId());
+
+                call.enqueue(new Callback<LoginResponse>() {
+                    @Override
+                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(cxt, "Noticia eliminada con éxito", Toast.LENGTH_SHORT).show();
+                            EliminarNoticia eliminarNoticia = ViewModelProviders.of((FragmentActivity) cxt).get(EliminarNoticia.class);
+
+                            eliminarNoticia.selectedAplicar("si");
+                        } else {
+                            Toast.makeText(cxt, "No ha sido posible eliminar la noticia", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<LoginResponse> call, Throwable t) {
+                        Log.e("NetworkFailure", t.getMessage());
+                        Toast.makeText(cxt, "Error de conexión", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+            }
+        });
     }
 
 
@@ -83,7 +124,7 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public NoticiaRes mItem;
+        public MisPublicacionesResponse mItem;
         public final ImageView imageView_imagen_mp, imageView_favourite_mp, imageView_edit, imageView_delete;
         public final TextView textView_title_mp, textView_likes_mp;
 

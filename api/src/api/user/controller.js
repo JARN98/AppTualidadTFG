@@ -29,7 +29,7 @@ export const showMyNotices = ({ user }, res, next) => {
     .then(notFound(res))
     .then((user) => ({
       count: user.noticias.length,
-      rows: user.noticias
+      rows: user.view(true).noticias
     }))
     .then(success(res))
     .catch(next)

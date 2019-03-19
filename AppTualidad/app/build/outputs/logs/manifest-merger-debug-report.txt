@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
 MERGED from [com.android.support:design:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/jose/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/d32a6e402880bdcf76863ad41fb9b85f/AndroidManifest.xml:2:1-11:12
@@ -16,6 +16,7 @@ MERGED from [com.android.support:support-v4:28.0.0] /home/jose/.gradle/caches/tr
 MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/edafda0a45b1b23af708df83d87b1f23/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.9.0] /home/jose/.gradle/caches/transforms-1/files-1.1/glide-4.9.0.aar/ac85bfdc288a4d7c71af4730014c9d27/AndroidManifest.xml:2:1-12:12
 MERGED from [android.arch.lifecycle:extensions:1.1.1] /home/jose/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/727ce9dc176f170eaa0a909a8fd8d489/AndroidManifest.xml:17:1-30:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fd1778682bb8dfc783e8f55e021874b2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/88a8e56d09b27d3846fe647228de6a64/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/7a85ae8d95bb71ca6bd7d5926ed8cc54/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/3d23950499286dc5be8bc75e3bbd12a4/AndroidManifest.xml:17:1-22:12
@@ -34,7 +35,6 @@ MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/jose/.gradle/
 MERGED from [com.android.support:support-compat:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e1f289f039cd3fb0df4b72570b4be1b1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:versionedparcelable:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/6aee1678e621546eb1eb1018b9064082/AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/3a9789a6fb38276749b6b964933a56e8/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fd1778682bb8dfc783e8f55e021874b2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/jose/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.9.0.aar/3e107a4a41ae47dd907b907da4d9228d/AndroidManifest.xml:2:1-11:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/jose/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b9be0e11ab41ed2e30e77081179dc849/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/jose/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/85906eaf81ef3614b76adae826a1377f/AndroidManifest.xml:17:1-22:12
@@ -45,20 +45,20 @@ MERGED from [com.android.support:documentfile:28.0.0] /home/jose/.gradle/caches/
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/79c9258020958e932f67d2cf8d0513fa/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/6cfcc6f86705584ff4e264c8ad5f6356/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/b9ca20a57a9b9d536f6151f1f88bb328/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:3:5-38
 		INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml
 		INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-31:12
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:2:11-69
@@ -75,7 +75,7 @@ ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/Android
 	android:name
 		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:7:22-78
 application
-ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:9:5-29:19
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:9:5-33:19
 MERGED from [com.android.support:design:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/jose/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/d32a6e402880bdcf76863ad41fb9b85f/AndroidManifest.xml:9:5-20
@@ -114,34 +114,42 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/jose/.gradle/cach
 		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:15:9-40
+activity#com.example.apptualidad.ComentariosActivity
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:16:9-66
+	android:name
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:16:19-54
+activity#com.example.apptualidad.DetallesActivity
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:17:9-54
+	android:name
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:17:19-51
 activity#com.example.apptualidad.PerfilActivity
-ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:16:9-119
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:18:9-20:72
 	android:theme
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:16:50-106
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:20:13-69
 	android:name
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:16:19-49
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:19:13-43
 activity#com.example.apptualidad.DashboardActivity
-ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:17:9-19:72
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:21:9-23:72
 	android:theme
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:19:13-69
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:23:13-69
 	android:name
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:18:13-46
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:22:13-46
 activity#com.example.apptualidad.SessionActivity
-ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:20:9-28:20
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:24:9-32:20
 	android:theme
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:22:13-69
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:26:13-69
 	android:name
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:21:13-44
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:25:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml:30:27-74
 uses-sdk
 INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/AndroidManifest.xml
@@ -170,6 +178,8 @@ MERGED from [com.github.bumptech.glide:glide:4.9.0] /home/jose/.gradle/caches/tr
 MERGED from [com.github.bumptech.glide:glide:4.9.0] /home/jose/.gradle/caches/transforms-1/files-1.1/glide-4.9.0.aar/ac85bfdc288a4d7c71af4730014c9d27/AndroidManifest.xml:6:5-8:41
 MERGED from [android.arch.lifecycle:extensions:1.1.1] /home/jose/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/727ce9dc176f170eaa0a909a8fd8d489/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:extensions:1.1.1] /home/jose/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/727ce9dc176f170eaa0a909a8fd8d489/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fd1778682bb8dfc783e8f55e021874b2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fd1778682bb8dfc783e8f55e021874b2/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/88a8e56d09b27d3846fe647228de6a64/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/88a8e56d09b27d3846fe647228de6a64/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/7a85ae8d95bb71ca6bd7d5926ed8cc54/AndroidManifest.xml:20:5-44
@@ -206,8 +216,6 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/jose/.gradle/
 MERGED from [com.android.support:versionedparcelable:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/6aee1678e621546eb1eb1018b9064082/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/3a9789a6fb38276749b6b964933a56e8/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/3a9789a6fb38276749b6b964933a56e8/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fd1778682bb8dfc783e8f55e021874b2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/jose/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fd1778682bb8dfc783e8f55e021874b2/AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/jose/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.9.0.aar/3e107a4a41ae47dd907b907da4d9228d/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/jose/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.9.0.aar/3e107a4a41ae47dd907b907da4d9228d/AndroidManifest.xml:5:5-7:41
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/jose/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b9be0e11ab41ed2e30e77081179dc849/AndroidManifest.xml:20:5-44

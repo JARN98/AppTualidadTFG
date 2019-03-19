@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PerfilActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" ></activity>
+        <activity android:name=".ComentariosActivity"></activity>
+        <activity android:name=".DetallesActivity" />
+        <activity
+            android:name=".PerfilActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".DashboardActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

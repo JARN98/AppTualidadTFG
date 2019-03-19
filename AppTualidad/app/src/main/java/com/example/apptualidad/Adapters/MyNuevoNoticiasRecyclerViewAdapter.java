@@ -1,6 +1,7 @@
 package com.example.apptualidad.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 
 import com.bumptech.glide.Glide;
+import com.example.apptualidad.DetallesActivity;
 import com.example.apptualidad.Generator.ServiceGenerator;
 import com.example.apptualidad.Generator.TipoAutenticacion;
 import com.example.apptualidad.Generator.UtilToken;
@@ -116,6 +118,23 @@ public class MyNuevoNoticiasRecyclerViewAdapter extends RecyclerView.Adapter<MyN
                 });
             }
         });
+
+        goToDetails(position, holder);
+
+    }
+
+    private void goToDetails(final int position, ViewHolder holder) {
+
+
+        holder.imageView_imagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, DetallesActivity.class);
+                i.putExtra("id", mValues.get(position).getId());
+                context.startActivity(i);
+            }
+        });
+
 
     }
 

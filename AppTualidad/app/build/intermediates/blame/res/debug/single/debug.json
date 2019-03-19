@@ -4,6 +4,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_comment_white_oval_bubble.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_comment_white_oval_bubble.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/32f53c5ea3b8a82461f4b6ff5c674e6b/res/drawable-hdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
     },
@@ -52,32 +56,36 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e1f289f039cd3fb0df4b72570b4be1b1/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_design_navigation_item.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/layout/design_navigation_item.xml"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color_mtrl_text_btn_text_color_selector.xml.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/color/mtrl_text_btn_text_color_selector.xml"
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color_mtrl_text_btn_text_color_selector.xml.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/color/mtrl_text_btn_text_color_selector.xml"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_filter_list_white_24dp.png.flat",
-        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_filter_list_white_24dp.png"
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_favorite_border_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-hdpi/ic_favorite_border_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color_mtrl_btn_text_color_selector.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/color/mtrl_btn_text_color_selector.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_filter_list_white_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_filter_list_white_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",
@@ -116,12 +124,12 @@
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_edit_black_24dp.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e1f289f039cd3fb0df4b72570b4be1b1/res/layout-v21/notification_template_custom_big.xml"
-    },
-    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/interpolator-v21_mtrl_linear_out_slow_in.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/interpolator-v21/mtrl_linear_out_slow_in.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e1f289f039cd3fb0df4b72570b4be1b1/res/layout-v21/notification_template_custom_big.xml"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_notification_action.xml.flat",
@@ -132,48 +140,52 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/layout/design_layout_tab_text.xml"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable/abc_vector_test.xml"
-    },
-    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable/abc_vector_test.xml"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/906b445013d282fe6f9c915012fdbb9f/res/layout/notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-mdpi-v4/abc_popup_background_mtrl_mult.9.png"
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-mdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_launcher_background.xml.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_launcher_background.xml"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_favorite_border_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-mdpi/ic_favorite_border_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_activity_perfil.xml.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/layout/activity_perfil.xml"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_abc_action_mode_bar.xml.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/layout/abc_action_mode_bar.xml"
-    },
-    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_buttonshape2.xml.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/drawable/buttonshape2.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_abc_action_mode_bar.xml.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/layout/abc_action_mode_bar.xml"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow_custom.xml.flat",
@@ -252,12 +264,16 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_message_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_message_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_abc_textfield_search_material.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -274,6 +290,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_favorite_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_favorite_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",
@@ -376,6 +396,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/layout/abc_activity_chooser_view.xml"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_message_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-hdpi/ic_message_black_24dp.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-v21_avd_show_password.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/drawable-v21/avd_show_password.xml"
     },
@@ -408,6 +432,10 @@
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-mdpi/ic_edit_black_24dp.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_message_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-ldpi/ic_message_black_24dp.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
@@ -424,12 +452,12 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_fragment_mispublicaciones_list.xml.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/layout/fragment_mispublicaciones_list.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
@@ -684,12 +712,12 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_design_password_eye.xml.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/drawable/design_password_eye.xml"
-    },
-    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_edit_black_24dp.png.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_edit_black_24dp.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_design_password_eye.xml.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/drawable/design_password_eye.xml"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/anim_design_snackbar_in.xml.flat",
@@ -852,6 +880,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/layout/abc_screen_simple.xml"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_delete_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_delete_black_24dp.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
     },
@@ -860,16 +892,16 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/color-v23/abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_delete_black_24dp.png.flat",
-        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_delete_black_24dp.png"
-    },
-    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_notification_template_part_chronometer.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e1f289f039cd3fb0df4b72570b4be1b1/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_favorite_border_black_24dp.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_favorite_border_black_24dp.xml"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_abc_dialog_material_background.xml.flat",
@@ -946,6 +978,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_checkbox.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_message_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-mdpi/ic_message_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
@@ -1120,6 +1156,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_comment_white_oval_bubble.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_comment_white_oval_bubble.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_tooltip_frame_light.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable/tooltip_frame_light.xml"
     },
@@ -1174,6 +1214,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxhdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_favorite_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_favorite_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_abc_edit_text_material.xml.flat",
@@ -1236,6 +1280,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-mdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_comment_white_oval_bubble.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-mdpi/ic_comment_white_oval_bubble.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxxhdpi-v4/abc_ic_star_black_48dp.png"
     },
@@ -1246,6 +1294,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color_mtrl_chip_ripple_color.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/color/mtrl_chip_ripple_color.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_comment_white_oval_bubble.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_comment_white_oval_bubble.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/interpolator_mtrl_linear.xml.flat",
@@ -1270,6 +1322,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_message_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_message_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_design_text_input_password_icon.xml.flat",
@@ -1344,8 +1400,16 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_fragment_comentarios.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/layout/fragment_comentarios.xml"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_person_white_24dp.png.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-mdpi/ic_person_white_24dp.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_activity_comentarios.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/layout/activity_comentarios.xml"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color-v23_design_tint_password_toggle.xml.flat",
@@ -1354,6 +1418,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_full_open_on_phone.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/32f53c5ea3b8a82461f4b6ff5c674e6b/res/drawable-hdpi-v4/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_favorite_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-hdpi/ic_favorite_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_custom.xml.flat",
@@ -1408,6 +1476,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_favorite_border_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-ldpi/ic_favorite_border_black_24dp.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_abc_screen_content_include.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/layout/abc_screen_content_include.xml"
     },
@@ -1446,6 +1518,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_message_black_24dp.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_message_black_24dp.xml"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_search_white_24dp.png.flat",
@@ -1552,12 +1628,12 @@
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-hdpi/ic_favorite_border_white_24dp.png"
     },
     {
-        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxxhdpi-v4/abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_filter_dialog.xml.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/layout/filter_dialog.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxxhdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1596,6 +1672,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/anim/abc_fade_in.xml"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_activity_detalles.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/layout/activity_detalles.xml"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable/abc_spinner_textfield_background_material.xml"
     },
@@ -1616,6 +1696,14 @@
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_custom_layout.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/layout/custom_layout.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_fragment_comentarios_list.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/layout/fragment_comentarios_list.xml"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
@@ -1626,6 +1714,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_favorite_border_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_favorite_border_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color-v23_abc_tint_switch_track.xml.flat",
@@ -1776,6 +1868,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_comment_white_oval_bubble.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_comment_white_oval_bubble.xml"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_abc_expanded_menu_layout.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/layout/abc_expanded_menu_layout.xml"
     },
@@ -1856,6 +1952,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_message_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_message_black_24dp.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/32f53c5ea3b8a82461f4b6ff5c674e6b/res/drawable-xhdpi-v4/common_full_open_on_phone.png"
     },
@@ -1908,6 +2008,10 @@
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/anim/abc_tooltip_exit.xml"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_favorite_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_favorite_black_24dp.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -1926,6 +2030,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_edit_black_24dp.xml.flat",
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_edit_black_24dp.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_favorite_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-mdpi/ic_favorite_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -2008,6 +2116,10 @@
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_person_white_24dp.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_favorite_black_24dp.xml.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_favorite_black_24dp.xml"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/8b41b47c5c5da22f56133b5c4c30f708/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -2082,6 +2194,14 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/drawable-xxxhdpi-v4/design_ic_visibility_off.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_comment_white_oval_bubble.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-ldpi/ic_comment_white_oval_bubble.png"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_comment_white_oval_bubble.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-hdpi/ic_comment_white_oval_bubble.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -2204,6 +2324,10 @@
         "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-mdpi/ic_add_white_24dp.png"
     },
     {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_favorite_border_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_favorite_border_black_24dp.png"
+    },
+    {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/layout_design_menu_item_action_area.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/layout/design_menu_item_action_area.xml"
     },
@@ -2254,6 +2378,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/animator_design_fab_show_motion_spec.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/animator/design_fab_show_motion_spec.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_favorite_border_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_favorite_border_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_person_white_24dp.png.flat",
@@ -2430,6 +2558,10 @@
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/color_mtrl_btn_bg_color_selector.xml.flat",
         "source": "/home/jose/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/5df63b0a8aa951d69058ea0a7938b413/res/color/mtrl_btn_bg_color_selector.xml"
+    },
+    {
+        "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_favorite_black_24dp.png.flat",
+        "source": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/generated/res/pngs/debug/drawable-ldpi/ic_favorite_black_24dp.png"
     },
     {
         "merged": "/home/jose/Escritorio/AppTualidadFCT/AppTualidad/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",

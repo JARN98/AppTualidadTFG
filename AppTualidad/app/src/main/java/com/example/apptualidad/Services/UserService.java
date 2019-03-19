@@ -3,7 +3,9 @@ package com.example.apptualidad.Services;
 import com.example.apptualidad.Model.EditPass;
 import com.example.apptualidad.Model.EditUser;
 import com.example.apptualidad.Model.NoticiaRes;
+import com.example.apptualidad.Model.ResponseContainer;
 import com.example.apptualidad.Model.User;
+import com.example.apptualidad.Responses.MisPublicacionesResponse;
 import com.example.apptualidad.Responses.UploadPhotoUser;
 
 import okhttp3.MultipartBody;
@@ -29,10 +31,14 @@ public interface UserService {
     Call<User> editMe(@Body EditUser editUser, @Path("id") String id);
 
     @PUT("/users/{id}/password")
-    Call<User> editPass(@Header("Authorization") String authorization,@Path("id") String id, @Body EditPass editPass);
+    Call<User> editPass(@Header("Authorization") String authorization, @Path("id") String id, @Body EditPass editPass);
 
     @Multipart
     @POST("/photos/user")
     Call<UploadPhotoUser> addPhoto(@Part MultipartBody.Part photo,
                                    @Part("noticia") RequestBody user);
+
+    @GET("/users/me/noticias")
+    Call<ResponseContainer<MisPublicacionesResponse>> getMisNoticias();
+
 }

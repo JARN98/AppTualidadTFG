@@ -2,10 +2,13 @@ package com.example.apptualidad.Services;
 
 import com.example.apptualidad.Model.NoticiaRes;
 import com.example.apptualidad.Model.ResponseContainer;
+import com.example.apptualidad.Responses.GetOneNoticiaResponse;
+import com.example.apptualidad.Responses.LoginResponse;
 
 import java.util.Map;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -32,5 +35,11 @@ public interface DashboardService {
             @QueryMap Map<String, String> options
 
     );
+
+    @DELETE("/noticias/{id}")
+    Call<LoginResponse> deleteNoticia(@Path("id") String id);
+
+    @GET("noticias/{id}")
+    Call<GetOneNoticiaResponse> getOneNoticia(@Path("id") String id);
 
 }

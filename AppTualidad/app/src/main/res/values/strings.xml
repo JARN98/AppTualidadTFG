@@ -34,4 +34,5 @@
     <string name="editText_pass_actual">Contraseña actual</string>
     <string name="editText_pass_nueva">Nueva contraseña</string>
     <string name="editText_pass_rep">Repite contraseña</string>
+    <string name="editText_comentario">Añade un comentario...</string>
 </resources>

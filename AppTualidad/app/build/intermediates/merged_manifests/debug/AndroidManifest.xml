@@ -22,6 +22,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.apptualidad.ComentariosActivity" />
+        <activity android:name="com.example.apptualidad.DetallesActivity" />
         <activity
             android:name="com.example.apptualidad.PerfilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
