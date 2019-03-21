@@ -2,6 +2,7 @@ package com.example.apptualidad.Adapters;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.apptualidad.AddNoticia;
 import com.example.apptualidad.Generator.ServiceGenerator;
 import com.example.apptualidad.Generator.TipoAutenticacion;
 import com.example.apptualidad.Generator.UtilToken;
@@ -20,6 +22,7 @@ import com.example.apptualidad.Generator.UtilUser;
 import com.example.apptualidad.Listener.listaNoticiasInterface;
 import com.example.apptualidad.Model.NoticiaRes;
 import com.example.apptualidad.Model.User;
+import com.example.apptualidad.PerfilActivity;
 import com.example.apptualidad.R;
 import com.example.apptualidad.Responses.LoginResponse;
 import com.example.apptualidad.Responses.MisPublicacionesResponse;
@@ -81,6 +84,21 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
         darLike(position, holder);
 
         eliminarNoticia(position, holder);
+
+        editarNoticia(position, holder);
+    }
+
+    private void editarNoticia(final int position, ViewHolder holder) {
+        holder.imageView_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(cxt, AddNoticia.class);
+                i.putExtra("id", mValues.get(position).getId());
+                cxt.startActivity(i);
+                PerfilActivity activity = (PerfilActivity) cxt;
+                activity.finish();
+            }
+        });
     }
 
     private void eliminarNoticia(final int position, ViewHolder holder) {

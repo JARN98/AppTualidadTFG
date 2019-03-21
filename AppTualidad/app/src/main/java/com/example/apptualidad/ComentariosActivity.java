@@ -12,11 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.apptualidad.Fragments.ComentariosFragment;
 import com.example.apptualidad.Fragments.LoginFragment;
 import com.example.apptualidad.Generator.ServiceGenerator;
 import com.example.apptualidad.Generator.TipoAutenticacion;
 import com.example.apptualidad.Generator.UtilToken;
+import com.example.apptualidad.Generator.UtilUser;
 import com.example.apptualidad.Listener.listaNoticiasInterface;
 import com.example.apptualidad.Model.AddComentario;
 import com.example.apptualidad.Model.Comentarios;
@@ -38,10 +41,19 @@ public class ComentariosActivity extends AppCompatActivity implements listaNotic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comentarios);
+
+        getSupportActionBar().setTitle("Comentarios");
         
         findids();
         
         events();
+
+
+        Glide
+                .with(ComentariosActivity.this)
+                .load(UtilUser.getImagen(ComentariosActivity.this))
+                .apply(RequestOptions.circleCropTransform())
+                .into(imageView_yo);
     }
 
     private void events() {
@@ -60,6 +72,8 @@ public class ComentariosActivity extends AppCompatActivity implements listaNotic
                             AniadirComentario aniadirComentario = ViewModelProviders.of(ComentariosActivity.this).get(AniadirComentario.class);
 
                             aniadirComentario.selectedAplicar("si");
+
+                            editText_comentario.setText("");
                         } else {
                             Toast.makeText(ComentariosActivity.this, "Fallo al añadir comentario", Toast.LENGTH_SHORT).show();
                         }

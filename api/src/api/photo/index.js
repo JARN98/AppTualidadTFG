@@ -35,6 +35,11 @@ router.post('/user',
   upload.single('photo'),
   createPerfilPhoto)
 
+  router.post('/multiple',
+  token({ required: true }),
+  upload.array('photo'),
+  create)
+
 /**
  * @api {get} /photos Retrieve photos
  * @apiName RetrievePhotos

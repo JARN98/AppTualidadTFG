@@ -1,6 +1,7 @@
 package com.example.apptualidad.Responses;
 
 import com.example.apptualidad.Model.Comentarios;
+import com.example.apptualidad.Model.Photo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +16,10 @@ public class GetOneNoticiaResponse {
     public String localizacion;
     public List<Photo> photos = null;
     public Autor autor;
+    public String direccion;
 
 
-    public GetOneNoticiaResponse(String id, String title, String description, String likes, List<Comentarios> comentarios, String localizacion, List<Photo> photos, Autor autor) {
+    public GetOneNoticiaResponse(String id, String title, String description, String likes, List<Comentarios> comentarios, String localizacion, List<Photo> photos, Autor autor, String direccion) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -26,6 +28,7 @@ public class GetOneNoticiaResponse {
         this.localizacion = localizacion;
         this.photos = photos;
         this.autor = autor;
+        this.direccion = direccion;
     }
 
     public String getId() {
@@ -99,6 +102,15 @@ public class GetOneNoticiaResponse {
         }
         return fotos;
     }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -116,7 +128,8 @@ public class GetOneNoticiaResponse {
         if (localizacion != null ? !localizacion.equals(that.localizacion) : that.localizacion != null)
             return false;
         if (photos != null ? !photos.equals(that.photos) : that.photos != null) return false;
-        return autor != null ? autor.equals(that.autor) : that.autor == null;
+        if (autor != null ? !autor.equals(that.autor) : that.autor != null) return false;
+        return direccion != null ? direccion.equals(that.direccion) : that.direccion == null;
     }
 
     @Override
@@ -129,6 +142,7 @@ public class GetOneNoticiaResponse {
         result = 31 * result + (localizacion != null ? localizacion.hashCode() : 0);
         result = 31 * result + (photos != null ? photos.hashCode() : 0);
         result = 31 * result + (autor != null ? autor.hashCode() : 0);
+        result = 31 * result + (direccion != null ? direccion.hashCode() : 0);
         return result;
     }
 
@@ -143,6 +157,7 @@ public class GetOneNoticiaResponse {
                 ", localizacion='" + localizacion + '\'' +
                 ", photos=" + photos +
                 ", autor=" + autor +
+                ", direccion='" + direccion + '\'' +
                 '}';
     }
 }

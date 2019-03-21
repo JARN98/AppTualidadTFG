@@ -66,6 +66,7 @@ attr alertDialogTheme
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
+attr ambientEnabled
 attr arrowHeadLength
 attr arrowShaftLength
 attr autoCompleteTextViewStyle
@@ -116,6 +117,13 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr cameraBearing
+attr cameraMaxZoomPreference
+attr cameraMinZoomPreference
+attr cameraTargetLat
+attr cameraTargetLng
+attr cameraTilt
+attr cameraZoom
 attr cardBackgroundColor
 attr cardCornerRadius
 attr cardElevation
@@ -302,6 +310,10 @@ attr itemTextColor
 attr keylines
 attr labelVisibilityMode
 attr lastBaselineToBottomHeight
+attr latLngBoundsNorthEastLatitude
+attr latLngBoundsNorthEastLongitude
+attr latLngBoundsSouthWestLatitude
+attr latLngBoundsSouthWestLongitude
 attr layout
 attr layoutManager
 attr layout_anchor
@@ -378,8 +390,10 @@ attr listPreferredItemHeightLarge
 attr listPreferredItemHeightSmall
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
+attr liteMode
 attr logo
 attr logoDescription
+attr mapType
 attr materialButtonStyle
 attr materialCardViewStyle
 attr maxActionInlineWidth
@@ -552,7 +566,16 @@ attr track
 attr trackTint
 attr trackTintMode
 attr ttcIndex
+attr uiCompass
+attr uiMapToolbar
+attr uiRotateGestures
+attr uiScrollGestures
+attr uiScrollGesturesDuringRotateOrZoom
+attr uiTiltGestures
+attr uiZoomControls
+attr uiZoomGestures
 attr useCompatPadding
+attr useViewLifecycle
 attr viewInflaterClass
 attr voiceIcon
 attr windowActionBar
@@ -565,6 +588,7 @@ attr windowFixedWidthMinor
 attr windowMinWidthMajor
 attr windowMinWidthMinor
 attr windowNoTitle
+attr zOrderOnTop
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
@@ -1061,6 +1085,7 @@ drawable ic_favorite_white_24dp
 drawable ic_filter_list_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_map_black_24dp
 drawable ic_message_black_24dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1132,6 +1157,7 @@ id button_cerca
 id button_change_photo
 id button_destacado
 id button_mispublicaciones
+id button_next_addnotice
 id button_nuevo
 id button_perfil
 id cancel_action
@@ -1148,8 +1174,10 @@ id constraintLayout
 id constraintLayout2
 id constraintLayout3
 id constraintLayout4
+id constraintLayout5
 id container
 id container_comments
+id container_photo
 id contenedor_listas
 id content
 id contentPanel
@@ -1172,6 +1200,8 @@ id editText_buscar
 id editText_change_name
 id editText_change_perfil
 id editText_comentario
+id editText_description_addnotice
+id editText_direccion_addnotice
 id editText_email_login
 id editText_email_registro
 id editText_name_registro
@@ -1180,6 +1210,7 @@ id editText_pass_nueva
 id editText_pass_rep
 id editText_password_login
 id editText_password_registro
+id editText_title_create
 id edit_query
 id end
 id end_padder
@@ -1195,14 +1226,18 @@ id filled
 id fixed
 id floatingActionButton
 id floatingActionButton2
+id floatingActionButton_addphoto
 id forever
 id ghost_view
 id glide_custom_view_target_tag
 id gone
 id group_divider
 id groups
+id guideline
+id guideline2
 id home
 id homeAsUp
+id hybrid
 id icon
 id icon_group
 id icon_only
@@ -1218,7 +1253,9 @@ id imageView_filter
 id imageView_image
 id imageView_imagen_mp
 id imageView_like
+id imageView_map
 id imageView_perfil
+id imageView_photo
 id imageView_yo
 id info
 id invisible
@@ -1235,6 +1272,7 @@ id list
 id listMode
 id list_item
 id login_title
+id map
 id masked
 id media_actions
 id message
@@ -1266,6 +1304,7 @@ id relativeLayout
 id right
 id right_icon
 id right_side
+id satellite
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1314,6 +1353,7 @@ id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id terrain
 id text
 id text2
 id textSpacerNoButtons
@@ -1322,6 +1362,8 @@ id textStart
 id textView
 id textView2
 id textView3
+id textView4
+id textView6
 id textView_contenido
 id textView_descripcion
 id textView_descrition_login
@@ -1332,7 +1374,9 @@ id textView_lugar
 id textView_name_autor
 id textView_publicar
 id textView_title
+id textView_title_addnotice
 id textView_title_mp
+id textView_title_noticia
 id textView_title_registro
 id text_input_password_toggle
 id textinput_counter
@@ -1409,11 +1453,14 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_noticia
 layout activity_comentarios
 layout activity_dashboard
 layout activity_detalles
 layout activity_main
+layout activity_maps
 layout activity_perfil
+layout activity_photo
 layout custom_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1432,6 +1479,8 @@ layout design_text_input_password_icon
 layout filter_dialog
 layout fragment_comentarios
 layout fragment_comentarios_list
+layout fragment_editphoto
+layout fragment_editphoto_list
 layout fragment_login
 layout fragment_mispublicaciones
 layout fragment_mispublicaciones_list
@@ -1513,6 +1562,7 @@ string button_cerca
 string button_change_photo
 string button_destacado
 string button_mispublicaciones
+string button_next_addnotice
 string button_nuevo
 string button_perfil
 string cancel
@@ -1537,11 +1587,18 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string delete_photo
 string dialog_message
+string dialog_message2
 string dialog_title
+string dialog_title2
+string dialog_title3
+string dialog_title4
 string editText_change_name
 string editText_change_perfil
 string editText_comentario
+string editText_description_addnotice
+string editText_direccion_addnotice
 string editText_email_login
 string editText_email_registro
 string editText_name_registro
@@ -1550,8 +1607,10 @@ string editText_pass_nueva
 string editText_pass_rep
 string editText_password_login
 string editText_password_registro
+string editText_title_create
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string google_maps_key
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string jwt_key
@@ -1566,8 +1625,11 @@ string path_password_strike_through
 string search_menu_title
 string sharedpreferences_filename
 string status_bar_notification_info_overflow
+string textView_aceptar
 string textView_descrition_login
+string textView_title_addnotice
 string textView_title_registro
+string title_activity_maps
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2118,6 +2180,7 @@ styleable LinearLayoutCompat android_gravity android_orientation android_baselin
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable MapAttrs ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialButton android_insetLeft android_insetRight android_insetTop android_insetBottom backgroundTint backgroundTintMode cornerRadius icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor strokeColor strokeWidth
 styleable MaterialCardView strokeColor strokeWidth
 styleable MaterialComponentsTheme bottomSheetDialogTheme bottomSheetStyle chipGroupStyle chipStandaloneStyle chipStyle colorAccent colorBackgroundFloating colorPrimary colorPrimaryDark colorSecondary editTextStyle floatingActionButtonStyle materialButtonStyle materialCardViewStyle navigationViewStyle scrimBackground snackbarButtonStyle tabStyle textAppearanceBody1 textAppearanceBody2 textAppearanceButton textAppearanceCaption textAppearanceHeadline1 textAppearanceHeadline2 textAppearanceHeadline3 textAppearanceHeadline4 textAppearanceHeadline5 textAppearanceHeadline6 textAppearanceOverline textAppearanceSubtitle1 textAppearanceSubtitle2 textInputStyle

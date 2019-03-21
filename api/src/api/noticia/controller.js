@@ -68,13 +68,16 @@ export const show = ({ params }, res, next) => {
     .then(success(res))
     .catch(next)
 }
-export const update = ({ bodymen: { body }, params }, res, next) =>
+export const update = ({ bodymen: { body }, params }, res, next) => {
+  console.log(body);
+  
   Noticia.findById(params.id)
     .then(notFound(res))
     .then((noticia) => noticia ? Object.assign(noticia, body).save() : null)
     .then((noticia) => noticia ? noticia.view(true) : null)
     .then(success(res))
     .catch(next)
+}
 
 export const destroy = async ({ params }, res, next) => {
   var autor

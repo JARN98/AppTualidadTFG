@@ -33,8 +33,15 @@ public class PerfilActivity extends AppCompatActivity implements listaNoticiasIn
         findids();
 
         navegation();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.perfil_container, new MisPublicacionesFragment())
+                .commit();
+        button_mispublicaciones.setBackgroundColor(Color.parseColor("#009484"));
+        button_perfil.setBackgroundColor(Color.parseColor("#0BC5B4"));
         floatingActionButton2.hide();
-        
+
         events();
     }
 
@@ -53,13 +60,6 @@ public class PerfilActivity extends AppCompatActivity implements listaNoticiasIn
     @Override
     protected void onStart() {
         super.onStart();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.perfil_container, new MisPublicacionesFragment())
-                .commit();
-        button_mispublicaciones.setBackgroundColor(Color.parseColor("#009484"));
-        button_perfil.setBackgroundColor(Color.parseColor("#0BC5B4"));
-        floatingActionButton2.hide();
 
     }
 

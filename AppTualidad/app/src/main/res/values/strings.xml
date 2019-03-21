@@ -35,4 +35,16 @@
     <string name="editText_pass_nueva">Nueva contraseña</string>
     <string name="editText_pass_rep">Repite contraseña</string>
     <string name="editText_comentario">Añade un comentario...</string>
+    <string name="dialog_message2">¿Estás Seguro?</string>
+    <string name="dialog_title2">¿Quieres cerrar sesión?</string>
+    <string name="textView_title_addnotice">Añade una noticia</string>
+    <string name="editText_title_create">Título de la noticia...</string>
+    <string name="editText_description_addnotice">¿Que ha pasado?</string>
+    <string name="editText_direccion_addnotice">Dirección. Ej: Gran vía, 32</string>
+    <string name="button_next_addnotice">Siguiente</string>
+    <string name="delete_photo">Eliminar</string>
+    <string name="dialog_title3">¿Quieres borrar esta foto?</string>
+    <string name="dialog_title4">¿Quieres borrar este comentario?</string>
+    <string name="textView_aceptar">Aceptar</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

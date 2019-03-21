@@ -32,7 +32,7 @@ import retrofit2.Response;
 public class DetallesActivity extends AppCompatActivity {
     ViewPager viewPager;
     private TextView textView_title, textView_descripcion, textView_lugar, textView_likes;
-    private ImageView imageView_comments, imageView_like;
+    private ImageView imageView_comments, imageView_like, imageView_map;
     private List<String> imagenes;
     private String id;
     private GetOneNoticiaResponse noticia;
@@ -44,7 +44,16 @@ public class DetallesActivity extends AppCompatActivity {
 
         findids();
 
+        irAMapa();
+    }
 
+    private void irAMapa() {
+        imageView_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetallesActivity.this, MapsActivity.class));
+            }
+        });
     }
 
     @Override
@@ -83,6 +92,7 @@ public class DetallesActivity extends AppCompatActivity {
         textView_descripcion.setText(noticia.getDescription());
         textView_title.setText(noticia.getTitle());
         textView_likes.setText(noticia.getLikes());
+        textView_lugar.setText(noticia.getDireccion());
 
         imagenes = noticia.getPhotoLink();
 
@@ -113,6 +123,7 @@ public class DetallesActivity extends AppCompatActivity {
         textView_lugar = findViewById(R.id.textView_lugar);
         imageView_comments = findViewById(R.id.imageView_comments);
         imageView_like = findViewById(R.id.imageView_like);
+        imageView_map = findViewById(R.id.imageView_map);
     }
 
     private void pintarSiFav() {

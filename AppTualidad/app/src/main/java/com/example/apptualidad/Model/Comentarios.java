@@ -50,6 +50,10 @@ public class Comentarios {
         return autor.getPicture();
     }
 
+    public String getEmailAutor() {
+        return autor.getEmail();
+    }
+
     public void setAutor(Autor autor) {
         this.autor = autor;
     }

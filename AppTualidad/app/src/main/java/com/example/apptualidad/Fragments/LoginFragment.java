@@ -74,7 +74,6 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 progressDialog = new ProgressDialog(getActivity());
                 progressDialog.setMessage("Loading...");
-                progressDialog.show();
                 doLogin();
             }
         });
@@ -107,6 +106,12 @@ public class LoginFragment extends Fragment {
 
         if (validarString(email) && validarString(password)) {
 
+            progressDialog = new ProgressDialog(getContext());
+            progressDialog.setMessage("Loading..."); // Setting Message
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+            progressDialog.show(); // Display Progress Dialog
+            progressDialog.setCancelable(false);
+
             SessionService service = ServiceGenerator.createService(SessionService.class);
             Call<LoginResponse> call = service.doLogin(credentials);
 
@@ -117,13 +122,14 @@ public class LoginFragment extends Fragment {
                         // error
                         Log.e("RequestError", response.message());
                         Toast.makeText(getContext(), "Email o contraseña incorrecto", Toast.LENGTH_SHORT).show();
-
+                        progressDialog.dismiss();
                     } else {
 
                         UtilToken.setToken(getActivity(), response.body().getToken());
                         UtilUser.setUserInfo(getActivity(), response.body().getUser());
 
                         startActivity(new Intent(getActivity(), DashboardActivity.class));
+                        progressDialog.dismiss();
                     }
                 }
 
@@ -137,7 +143,6 @@ public class LoginFragment extends Fragment {
 
             Toast.makeText(getContext(), "Debes rellenar todos los campos", Toast.LENGTH_SHORT).show();
         }
-        progressDialog.dismiss();
     }
 
     Boolean validarString(String texto) {

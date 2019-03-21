@@ -12,7 +12,8 @@ const noticiaSchema = new Schema({
     type: String
   },
   likes: {
-    type: String
+    type: String,
+    default: '0'
   },
   comentarios: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -47,6 +48,9 @@ const noticiaSchema = new Schema({
     required: true,
     get: (v) => (v && v.length > 0) ? v.join() : null,
     set: (v) => (S(v).isEmpty()) ? null : v.split(',').map(Number),
+  },
+  direccion: {
+    type: String
   }
 }, {
   strict: false,
@@ -94,6 +98,7 @@ noticiaSchema.methods = {
       localizacion: this.localizacion,
       photos: this.photos,
       autor: this.autor,
+      direccion: this.direccion,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

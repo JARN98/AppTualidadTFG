@@ -1,6 +1,7 @@
 package com.example.apptualidad.Fragments;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ public class RegistroFragment extends Fragment {
     private EditText editText_name_registro, editText_email_registro, editText_password_registro;
     private Button Button_registro, Button_registroToLogin;
     private RegistroIterface registroIterface;
+    ProgressDialog progressDialog;
 
 
     public RegistroFragment() {
@@ -65,6 +67,9 @@ public class RegistroFragment extends Fragment {
         Button_registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog = new ProgressDialog(getActivity());
+                progressDialog.setMessage("Loading...");
+                progressDialog.show();
                 doRegister();
             }
         });
@@ -80,6 +85,11 @@ public class RegistroFragment extends Fragment {
         UserDto usuarioARegistrar = new UserDto(name, password, email);
 
         if (validarString(email) && validarString(password)) {
+            /*progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setMessage("Loading..."); // Setting Message
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);// Progress Dialog Style Spinner
+            progressDialog.setCancelable(false);
+            progressDialog.show();*/
 
             SessionService service = ServiceGenerator.createService(SessionService.class);
             Call<LoginResponse> call = service.doRegister(usuarioARegistrar);
@@ -89,15 +99,17 @@ public class RegistroFragment extends Fragment {
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                     if (response.code() != 201) {
                         // error
+                        progressDialog.dismiss();
                         Log.e("RequestError", response.message());
                         Toast.makeText(getContext(), "Registro fallido", Toast.LENGTH_SHORT).show();
-
+                        progressDialog.dismiss();
                     } else {
-
+                        progressDialog.dismiss();
                         UtilToken.setToken(getActivity(), response.body().getToken());
                         UtilUser.setUserInfo(getActivity(), response.body().getUser());
 
                         startActivity(new Intent(getActivity(), DashboardActivity.class));
+                        progressDialog.dismiss();
                     }
                 }
 
@@ -107,10 +119,13 @@ public class RegistroFragment extends Fragment {
                     Toast.makeText(getActivity(), "Error de conexión", Toast.LENGTH_SHORT).show();
                 }
             });
+            progressDialog.dismiss();
         } else {
 
             Toast.makeText(getContext(), "Debes rellenar todos los campos", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
         }
+        progressDialog.dismiss();
     }
 
     @Override

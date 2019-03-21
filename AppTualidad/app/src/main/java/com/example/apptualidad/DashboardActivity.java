@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -42,6 +43,7 @@ public class DashboardActivity extends AppCompatActivity implements listaNoticia
     private EditText editText_buscar;
     private ImageView imageView_filter, imageView_perfil;
     private int queFragmentoEsta;
+    private FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,32 @@ public class DashboardActivity extends AppCompatActivity implements listaNoticia
         navigation();
 
         events();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(DashboardActivity.this);
+
+            builder.setMessage(R.string.dialog_message2)
+                    .setTitle(R.string.dialog_title2);
+            builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    UtilUser.clearSharedPreferences(DashboardActivity.this);
+                    finish();
+                }
+            });
+            builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    dialog.dismiss();
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+
+            dialog.show();
     }
 
     private void events() {
@@ -100,6 +128,17 @@ public class DashboardActivity extends AppCompatActivity implements listaNoticia
                 irAPerfilActivity();
             }
         });
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irACrearNoticia();
+            }
+        });
+    }
+
+    private void irACrearNoticia() {
+        startActivity(new Intent(DashboardActivity.this, AddNoticia.class));
     }
 
     private void irAPerfilActivity() {
@@ -251,6 +290,7 @@ public class DashboardActivity extends AppCompatActivity implements listaNoticia
         editText_buscar = findViewById(R.id.editText_buscar);
         imageView_filter = findViewById(R.id.imageView_filter);
         imageView_perfil = findViewById(R.id.imageView_perfil);
+        floatingActionButton = findViewById(R.id.floatingActionButton);
     }
 
 }

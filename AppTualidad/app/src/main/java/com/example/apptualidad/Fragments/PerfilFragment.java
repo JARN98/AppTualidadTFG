@@ -333,10 +333,10 @@ public class PerfilFragment extends Fragment {
                 });
                 sirve =  valido;
             }
-        } else if(editText_pass_actual.getText().toString().isEmpty() || editText_pass_nueva.getText().toString().isEmpty() || editText_pass_actual.getText().toString().isEmpty()) {
-            sirve = true;
-        } else {
+        } else if(!editText_pass_actual.getText().toString().isEmpty() || !editText_pass_nueva.getText().toString().isEmpty() || !editText_pass_rep.getText().toString().isEmpty()) {
             sirve = false;
+        } else {
+            sirve = true;
         }
 
         return sirve;

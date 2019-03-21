@@ -7,7 +7,7 @@ import { token, master } from '../../services/passport'
 export Noticia, { schema } from './model'
 
 const router = new Router()
-const { title, description, likes, comentarios, localizacion, photos, autor } = schema.tree
+const { title, description, likes, comentarios, localizacion, photos, autor, direccion } = schema.tree
 
 const noticiSchema = new Schema({
   sort: {
@@ -42,8 +42,9 @@ const noticiSchema = new Schema({
  */
 router.post('/',
   token({ required: true }),
-  body({ title, description, likes, comentarios, localizacion, photos, autor }),
+  body({ title, description, likes, comentarios, localizacion, photos, autor, direccion }),
   create)
+
 
 /**
  * @api {get} /noticias Retrieve noticias
@@ -94,7 +95,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true }),
-  body({ title, description }),
+  body({ title, description, direccion }),
   update)
 
 /**
