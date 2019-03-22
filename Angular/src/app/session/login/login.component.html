@@ -1,0 +1,14 @@
+<div class="login-page">
+  <img src="../../../assets/images/logo.png" class="center">
+  <h1 style="text-align: center;">AppTualidad</h1>
+  <div class="form">
+    <form class="login-form">
+      <input name="email" type="text" placeholder="email" [(ngModel)]="email" />
+      <input name="password" type="password" placeholder="password" [(ngModel)]="password" />
+      <button (click)="doLogin()">login</button>
+    </form>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="error === true">
+    Debe rellenar todos los campos
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="example-1 card col-md-4" style="border: 0px !important" *ngFor="let noticia of listaNoticias">
+    <div class="wrapper" [style.backgroundImage]="'url('+ getPhoto(noticia) +')'">
+      <div class="icon2" (click)="openDialogEditNoticia(noticia)">
+        <i class="material-icons" style="margin-left: 15%; margin-top: 15%;">
+          edit
+        </i>
+      </div>
+      <div class="icon1" (click)="openDialogDeleteNoticia(noticia.id)"><i class="material-icons"
+          style="margin-left: 15%; margin-top: 15%;">
+          delete
+        </i>
+      </div>
+      <div class="data" (click)="detalles(noticia.id)">
+        <div class="content">
+          <h1 class="title"><a>{{noticia.title}}</a></h1>
+          <div class="text">
+            <i class="material-icons" style="margin-top:5px">
+              favorite
+            </i>
+            <span style="font-size: x-large;"> {{noticia.likes}}</span>
+
+          </div>
+
+          <!-- <label for="show-menu" class="menu-button"><span></span></label> -->
+        </div>
+        <!-- <input type="checkbox" id="show-menu" /> -->
+        <ul class="menu-content">
+          <li>
+            <a href="#" class="fa fa-bookmark-o"></a>
+          </li>
+          <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+          <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

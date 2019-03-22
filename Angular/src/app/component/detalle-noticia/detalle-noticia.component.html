@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body row">
+                <button class="btn btn-warning" (click)="openDialogEditPhotos()">Editar Fotos</button>
+                <div id="titulo" class="col-md-12">
+                    <h3 class="card-title">Nombre: {{noticiaResponse.title}}</h3>
+                </div>
+                <br />
+                <br />
+                <ngb-carousel class="carrusel col-md-12 row">
+                    <ng-template ngbSlide *ngFor="let imagen of photos" class="col-md-12 row">
+                        <img class="carrusel col-md-12 c-img resolucionImagen" src="{{imagen.link}}">
+                        <div class="carousel-caption">
+                            <h3 class="font-bold">Imagenes de la noticia: {{noticiaResponse.title}}</h3>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card card-outline-inverse">
+            <div class="card-header">
+                <h4 class="m-b-0" style="background-color: mintcream;">Descripción de la noticia</h4>
+            </div>
+            <div class="card-body">
+                <!-- <h3 class="card-title">Special title treatment</h3> -->
+                <p class="card-text">{{noticiaResponse.description}}</p>
+            </div>
+        </div>
+        <div>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="m-b-0" style="background-color: mintcream;">Autor de la publicación</h4>
+                </div>
+                <div class="card-body">
+                    <span class="card-title">{{noticiaResponse.autor.name}}</span>
+                    <div><img class="u-img" src={{noticiaResponse.autor.picture}} alt="user">
+                        <span class="card-subtitle">{{noticiaResponse.autor.email}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="card card-outline-info">
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="card-header" style="margin: 2px">
+    <h4 class="m-b-0">Comentarios</h4>
+</div>
+<div>
+    <div *ngFor="let comentario of noticiaResponse.comentarios">
+        <div class="card">
+            <div class="card-body">
+                <span class="card-title">{{comentario.autor.name}}</span>
+                <div><img class="u-img" src={{comentario.autor.picture}} alt="user">
+                    <span class="card-subtitle">{{comentario.contenido}}</span>
+                </div>
+
+                <button class="btn btn-danger" style="float: right"
+                    (click)="eliminarComentario(comentario.id)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

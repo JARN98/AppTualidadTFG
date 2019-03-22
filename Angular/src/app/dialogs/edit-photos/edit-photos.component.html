@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-lg-4 col-md-4" style="height:300px" *ngFor="let imagen of photos">
+    <div class="card text-center">
+      <img class="card-img-top img-responsive" style="object-fit:scale-down; height:300px" src={{imagen.link}}
+        alt="Card image cap">
+      <button class="btn btn-danger" (click)="eliminarImagen(imagen)">Eliminar</button>
+    </div>
+  </div>
+</div>
