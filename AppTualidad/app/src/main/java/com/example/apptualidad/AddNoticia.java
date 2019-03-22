@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.apptualidad.Generator.ServiceGenerator;
@@ -31,6 +32,7 @@ public class AddNoticia extends AppCompatActivity {
     private String loc;
     private String id = "";
     private EditNoticia editNoticia;
+    private TextView textView_title_addnotice;
 
 
     @Override
@@ -42,9 +44,10 @@ public class AddNoticia extends AppCompatActivity {
 
         id = getIntent().getStringExtra("id");
 
-        if(id == null) {
+        if (id == null) {
             crearNoticia();
         } else {
+            textView_title_addnotice.setText("Editar Noticia");
             getOneNoticia();
             actualizarNoticia();
         }
@@ -73,7 +76,7 @@ public class AddNoticia extends AppCompatActivity {
                     call.enqueue(new Callback<GetOneNoticiaResponse>() {
                         @Override
                         public void onResponse(Call<GetOneNoticiaResponse> call, Response<GetOneNoticiaResponse> response) {
-                            if ( response.isSuccessful() ) {
+                            if (response.isSuccessful()) {
                                 Intent i = new Intent(AddNoticia.this, PhotoActivity.class);
                                 i.putExtra("id", response.body().getId());
                                 startActivity(i);
@@ -106,37 +109,45 @@ public class AddNoticia extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                if ( loc == null ) {
+                    loc = "0.0,0.0";
+                }
 
                 if (loc.equals("0.0,0.0")) {
                     Toast.makeText(AddNoticia.this, "Debe escribir una dirección válida", Toast.LENGTH_SHORT).show();
                 } else {
 
+                    if (validarString(editText_title_create.getText().toString()) && validarString(editText_description_addnotice.getText().toString()) && validarString(editText_direccion_addnotice.getText().toString())) {
+                        addNoticia = new AddNoticiaDto(editText_title_create.getText().toString(), editText_description_addnotice.getText().toString(), editText_direccion_addnotice.getText().toString(), loc);
 
-                    addNoticia = new AddNoticiaDto(editText_title_create.getText().toString(), editText_description_addnotice.getText().toString(), editText_direccion_addnotice.getText().toString(), loc);
+                        DashboardService service = ServiceGenerator.createService(DashboardService.class, UtilToken.getToken(AddNoticia.this), TipoAutenticacion.JWT);
 
-                    DashboardService service = ServiceGenerator.createService(DashboardService.class, UtilToken.getToken(AddNoticia.this), TipoAutenticacion.JWT);
+                        Call<GetOneNoticiaResponse> call = service.addNoticia(addNoticia);
 
-                    Call<GetOneNoticiaResponse> call = service.addNoticia(addNoticia);
-
-                    call.enqueue(new Callback<GetOneNoticiaResponse>() {
-                        @Override
-                        public void onResponse(Call<GetOneNoticiaResponse> call, Response<GetOneNoticiaResponse> response) {
-                            if (response.isSuccessful()) {
-                                Intent i = new Intent(AddNoticia.this, PhotoActivity.class);
-                                i.putExtra("id", response.body().getId());
-                                startActivity(i);
-                                finish();
-                            } else {
-                                Toast.makeText(AddNoticia.this, "Fallo al añadir noticia", Toast.LENGTH_SHORT).show();
+                        call.enqueue(new Callback<GetOneNoticiaResponse>() {
+                            @Override
+                            public void onResponse(Call<GetOneNoticiaResponse> call, Response<GetOneNoticiaResponse> response) {
+                                if (response.isSuccessful()) {
+                                    Intent i = new Intent(AddNoticia.this, PhotoActivity.class);
+                                    i.putExtra("id", response.body().getId());
+                                    startActivity(i);
+                                    finish();
+                                } else {
+                                    Toast.makeText(AddNoticia.this, "Fallo al añadir noticia", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onFailure(Call<GetOneNoticiaResponse> call, Throwable t) {
-                            Log.e("NetworkFailure", t.getMessage());
-                            Toast.makeText(AddNoticia.this, "Error de conexión", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                            @Override
+                            public void onFailure(Call<GetOneNoticiaResponse> call, Throwable t) {
+                                Log.e("NetworkFailure", t.getMessage());
+                                Toast.makeText(AddNoticia.this, "Error de conexión", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    } else {
+                        Toast.makeText(AddNoticia.this, "Debe rellenar todos los campos", Toast.LENGTH_SHORT).show();
+                    }
+
+
                 }
 
 
@@ -153,7 +164,7 @@ public class AddNoticia extends AppCompatActivity {
         call.enqueue(new Callback<GetOneNoticiaResponse>() {
             @Override
             public void onResponse(Call<GetOneNoticiaResponse> call, Response<GetOneNoticiaResponse> response) {
-                if ( response.isSuccessful() ) {
+                if (response.isSuccessful()) {
                     editText_description_addnotice.setText(response.body().getDescription());
                     editText_title_create.setText(response.body().getTitle());
                     editText_direccion_addnotice.setText(response.body().getDireccion());
@@ -175,10 +186,15 @@ public class AddNoticia extends AppCompatActivity {
         editText_description_addnotice = findViewById(R.id.editText_description_addnotice);
         editText_direccion_addnotice = findViewById(R.id.editText_direccion_addnotice);
         button_next_addnotice = findViewById(R.id.button_next_addnotice);
+        textView_title_addnotice = findViewById(R.id.textView_title_addnotice);
     }
 
     public String getLocation(String direccion) throws IOException {
         String loc = Geocode.getLongLat(AddNoticia.this, direccion);
         return loc;
+    }
+
+    Boolean validarString(String texto) {
+        return texto != null && texto.trim().length() > 0;
     }
 }

@@ -2,8 +2,10 @@ package com.example.apptualidad.Adapters;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -83,6 +85,7 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
 
         darLike(position, holder);
 
+
         eliminarNoticia(position, holder);
 
         editarNoticia(position, holder);
@@ -101,37 +104,59 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
         });
     }
 
-    private void eliminarNoticia(final int position, ViewHolder holder) {
+    private void eliminarNoticia(final int position, final ViewHolder holder) {
 
         holder.imageView_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DashboardService service = ServiceGenerator.createService(DashboardService.class, UtilToken.getToken(cxt), TipoAutenticacion.JWT);
-                Call<LoginResponse> call = service.deleteNoticia(mValues.get(position).getId());
 
-                call.enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        if (response.isSuccessful()) {
-                            Toast.makeText(cxt, "Noticia eliminada con éxito", Toast.LENGTH_SHORT).show();
-                            EliminarNoticia eliminarNoticia = ViewModelProviders.of((FragmentActivity) cxt).get(EliminarNoticia.class);
+                AlertDialog.Builder builder = new AlertDialog.Builder(cxt);
 
-                            eliminarNoticia.selectedAplicar("si");
-                        } else {
-                            Toast.makeText(cxt, "No ha sido posible eliminar la noticia", Toast.LENGTH_SHORT).show();
-                        }
+                builder.setMessage(R.string.dialog_message2)
+                        .setTitle(R.string.dialog_title5);
+                builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        eliminar(position, holder);
                     }
-
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Log.e("NetworkFailure", t.getMessage());
-                        Toast.makeText(cxt, "Error de conexión", Toast.LENGTH_SHORT).show();
+                });
+                builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
                     }
                 });
 
+                AlertDialog dialog = builder.create();
+
+                dialog.show();
 
             }
         });
+    }
+
+    private void eliminar(int position, ViewHolder holder) {
+        DashboardService service = ServiceGenerator.createService(DashboardService.class, UtilToken.getToken(cxt), TipoAutenticacion.JWT);
+        Call<LoginResponse> call = service.deleteNoticia(mValues.get(position).getId());
+
+        call.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(cxt, "Noticia eliminada con éxito", Toast.LENGTH_SHORT).show();
+                    EliminarNoticia eliminarNoticia = ViewModelProviders.of((FragmentActivity) cxt).get(EliminarNoticia.class);
+
+                    eliminarNoticia.selectedAplicar("si");
+                } else {
+                    Toast.makeText(cxt, "No ha sido posible eliminar la noticia", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Log.e("NetworkFailure", t.getMessage());
+                Toast.makeText(cxt, "Error de conexión", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 
@@ -161,6 +186,7 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
         public String toString() {
             return super.toString() + " '" + mItem.getId() + "'";
         }
+
     }
 
     private boolean esFav(int position) {
@@ -170,7 +196,7 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
         int index = 0;
         boolean encontrado = false;
         while (!encontrado && index < listaFavs.size()) {
-            if (listaFavs.get(index).equals(mValues.get(position).getId())){
+            if (listaFavs.get(index).equals(mValues.get(position).getId())) {
                 encontrado = true;
             } else {
                 index++;
@@ -187,7 +213,7 @@ public class MyMisPublicacionesRecyclerViewAdapter extends RecyclerView.Adapter<
         int index = 0;
         boolean encontrado = false;
         while (!encontrado && index < listaFavs.size()) {
-            if (listaFavs.get(index).equals(mValues.get(position).getId())){
+            if (listaFavs.get(index).equals(mValues.get(position).getId())) {
                 encontrado = true;
             } else {
                 index++;

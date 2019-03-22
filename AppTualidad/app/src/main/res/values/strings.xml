@@ -45,6 +45,7 @@
     <string name="delete_photo">Eliminar</string>
     <string name="dialog_title3">¿Quieres borrar esta foto?</string>
     <string name="dialog_title4">¿Quieres borrar este comentario?</string>
+    <string name="dialog_title5">¿Quieres borrar esta noticia?</string>
     <string name="textView_aceptar">Aceptar</string>
     <string name="title_activity_maps">Map</string>
 </resources>

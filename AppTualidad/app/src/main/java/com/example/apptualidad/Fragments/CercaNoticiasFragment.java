@@ -164,6 +164,10 @@ public class CercaNoticiasFragment extends Fragment {
                 if (response.isSuccessful()) {
                     listaNoticias = response.body().getRows();
 
+                    if (listaNoticias.size() < 1) {
+                        Toast.makeText(cxt, "No hay ninguna respuesta, debe indicar la distancia máxima haciendo click en el filtro", Toast.LENGTH_LONG).show();
+                    }
+
                     adapter = new MyNuevoNoticiasRecyclerViewAdapter(
                             cxt,
                             listaNoticias,

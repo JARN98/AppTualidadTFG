@@ -67,9 +67,9 @@ public class RegistroFragment extends Fragment {
         Button_registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressDialog = new ProgressDialog(getActivity());
+                /*progressDialog = new ProgressDialog(getActivity());
                 progressDialog.setMessage("Loading...");
-                progressDialog.show();
+                progressDialog.show();*/
                 doRegister();
             }
         });
@@ -85,11 +85,11 @@ public class RegistroFragment extends Fragment {
         UserDto usuarioARegistrar = new UserDto(name, password, email);
 
         if (validarString(email) && validarString(password)) {
-            /*progressDialog = new ProgressDialog(getActivity());
+            progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Loading..."); // Setting Message
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);// Progress Dialog Style Spinner
             progressDialog.setCancelable(false);
-            progressDialog.show();*/
+            progressDialog.show();
 
             SessionService service = ServiceGenerator.createService(SessionService.class);
             Call<LoginResponse> call = service.doRegister(usuarioARegistrar);

@@ -672,6 +672,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background_tal
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1510,6 +1511,8 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
+mipmap ic_launcher_background_tal
+mipmap ic_launcher_foreground_tal
 mipmap ic_launcher_round
 string Button_login
 string Button_loginToRegistro
@@ -1594,6 +1597,7 @@ string dialog_title
 string dialog_title2
 string dialog_title3
 string dialog_title4
+string dialog_title5
 string editText_change_name
 string editText_change_perfil
 string editText_comentario
